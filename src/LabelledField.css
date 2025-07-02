@@ -1,0 +1,52 @@
+/* usage:
+    <labelledfield-i>
+      <label>
+        <small>My Label</small>
+        <input type="text" name="test" />
+      </label>
+    </labelledfield-i>
+*/
+
+labelledfield-i {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+
+labelledfield-i small {
+  position: absolute;
+  top: 0px;
+  pointer-events: none;
+
+  color: var(--color-text-secondary);
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 5px 14px 0;
+}
+
+labelledfield-i input,
+labelledfield-i select,
+labelledfield-i textarea {
+  flex: 1 0 auto;
+  padding: 15px 14px 0;
+  height: 55px;
+  min-width: 170px;
+  background: var(--color-bg-300);
+}
+
+labelledfield-i select {
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  /* hack to take the same height as its sibling input(s) */
+  padding-top: 12px;
+}
+
+/* Support for <div role="alert"> error messages below the input */
+labelledfield-i input:invalid:not(:placeholder-shown)~[role="alert"] {
+  color: var(--color-error);
+}

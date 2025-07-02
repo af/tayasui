@@ -1,0 +1,44 @@
+/* usage:
+    <switch-i>
+      <label>
+        <input type="checkbox" name="test" id="test" />
+      </label>
+    </switch-i>
+    <label htmlFor="test">Test</label>
+*/
+
+/* todo: parameterize with colors and clean up rem values */
+switch-i label {
+  background: #aaa;
+  display: inline-block;
+  border-radius: 1.2rem;
+  padding: 4px;
+  width: 3rem;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+switch-i label::before {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+switch-i label:has(input:checked) {
+  background: #007aff;
+
+  &::before {
+    transform: translateX(1.25rem);
+  }
+}
+
+switch-i label:has(input[disabled]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,17 @@
+badge-i {
+  align-items: center;
+  background: var(--color-bg-brand);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: var(--font-size-xs);
+  display: inline-flex;
+  line-height: 1;
+  padding: 3px 5px;
+  gap: 4px;
+}
+
+badge-i[type="inactive"] {
+  filter: grayscale(1);
+  color: var(--color-text-disabled);
+  opacity: 0.8;
+}
