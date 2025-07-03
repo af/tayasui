@@ -1,0 +1,75 @@
+:root {
+  /* Colors - Background */
+  --color-bg-brand: #d0daff;
+  --color-bg-0: #f0f0f3;
+  --color-bg-300: #f5f5f5;
+  --color-bg-400: #ffffff;
+  --color-bg-900: #ffffff;
+
+  /* Colors - Text */
+  --color-text-primary: #333333;
+  --color-text-secondary: #777;
+  --color-text-disabled: #aaa;
+
+  --color-border: #e0e0e0;
+
+  /* Colors - Status */
+  --color-error: #ff3b30;
+
+  /* Font Sizes */
+  --font-size-xs: 12px;
+
+  /* Spacing */
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+
+  --border-radius-s: 2px;
+  --border-radius-m: 6px;
+  --border-radius-full: 999px;
+
+  --shadow-m: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Stack Spacing (sp prefix) */
+  --sp-xs: 0.25rem;
+  --sp-s: 0.5rem;
+  --sp-m: 1rem;
+  --sp-l: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Palatino, serif;
+  background: var(--color-bg-0);
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body>nav {
+  border-right: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: var(--spacing-m);
+}
+
+main {
+  max-width: 45em;
+  padding: var(--spacing-m);
+  flex: 1;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}

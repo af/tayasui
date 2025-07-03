@@ -6,7 +6,8 @@
   "types": "tayasui.d.ts",
   "style": "src/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "bun run --hot ./playground/server.ts",
+    "test": "biome lint"
   },
   "repository": {
     "type": "git",

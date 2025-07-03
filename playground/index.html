@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>CSS Playground</title>
+    <link rel="stylesheet" href="./themes/basic.css" >
+    <link rel="stylesheet" href="/src/full.css" >
+  </head>
+  <body>
+    <nav>
+      <h1>Tayasui</h1>
+      TODO nav links here
+    </nav>
+    <main>
+      <vstack-i gap="s">
+        <p>A dev environment for CSS custom elements</p>
+
+        <h2>
+          <code>card-i</code>
+        </h2>
+        <hstack-i gap="m">
+          <card-i>
+            <hstack-i align="baseline">
+              <h2>Card Component</h2>
+              <badge-i>New</badge-i>
+            </hstack-i>
+            <p>This is an example card with title and content.</p>
+          </card-i>
+          <card-i>
+            <hstack-i align="baseline">
+              <h2>Another Card</h2>
+              <badge-i type="inactive">Old</badge-i>
+            </hstack-i>
+            <p>This is an example card with title and content.</p>
+          </card-i>
+        </hstack-i>
+
+        <h2>
+          <code>labelledfield-i</code>
+        </h2>
+        <labelledfield-i>
+          <label>
+            <small>Sample Input</small>
+            <input type="text" name="sample" />
+          </label>
+        </labelledfield-i>
+
+        <h2>
+          <code>switch-i</code>
+        </h2>
+        <hstack-i>
+          <switch-i>
+            <label>
+              <input type="checkbox" name="toggle" id="toggle" />
+            </label>
+          </switch-i>
+          <label for="toggle">Toggle Switch</label>
+        </hstack-i>
+
+        <h2>
+          <code>badge-i</code>
+        </h2>
+        <hstack-i>
+          <badge-i>Active Badge</badge-i>
+          <badge-i type="inactive">Inactive Badge</badge-i>
+        </hstack-i>
+
+        <h2>
+          <code>hstack-i</code>
+        </h2>
+        <hstack-i>
+          <div>Item 1</div>
+          <div>Item 2</div>
+          <div>Item 3</div>
+        </hstack-i>
+
+        <h2>
+          <code>vstack-i</code>
+        </h2>
+        <vstack-i>
+          <div>Item 1</div>
+          <div>Item 2</div>
+          <div>Item 3</div>
+        </vstack-i>
+      </vstack-i>
+    </main>
+  </body>
+</html>
