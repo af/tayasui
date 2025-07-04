@@ -20,6 +20,7 @@
   --font-size-xs: 12px;
 
   /* Spacing */
+  --spacing-s: 8px;
   --spacing-m: 16px;
   --spacing-l: 24px;
 
@@ -36,17 +37,11 @@
   --sp-l: 2rem;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Palatino, serif;
   background: var(--color-bg-0);
   display: flex;
   height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 body>nav {
@@ -59,17 +54,4 @@ main {
   max-width: 45em;
   padding: var(--spacing-m);
   flex: 1;
-}
-
-input,
-select,
-textarea {
-  font-family: inherit;
-}
-
-h1,
-h2,
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
 }
