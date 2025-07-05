@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "rootDirs": [
+      "."
+    ],
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "module": "esnext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2019"
+    ],
+    "importHelpers": true,
+    "strict": true,
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "es2019",
+    "noEmit": true
+  },
+  "include": [
+    "tayasui.d.ts",
+    "src",
+    "tests"
+  ]
+}

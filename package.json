@@ -7,7 +7,9 @@
   "style": "src/",
   "scripts": {
     "dev": "bun run --hot ./playground/server.ts",
-    "test": "biome lint"
+    "lint": "biome lint --write",
+    "tsc": "tsc --noEmit",
+    "test": "biome lint && bun tsc"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,8 @@
   "author": "Aaron Franks (http://aaronfranks.com/)",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "^2.0.6"
+    "@biomejs/biome": "^2.0.6",
+    "@types/react": "^19.1.8",
+    "typescript": "^5.8.3"
   }
 }
