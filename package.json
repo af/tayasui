@@ -6,6 +6,7 @@
   "types": "tayasui.d.ts",
   "style": "src/",
   "scripts": {
+    "build-dist": "bun build --minify --outfile=dist/bundle.css ./src/components.css",
     "dev": "bun run --hot ./playground/server.ts",
     "lint": "biome lint --write",
     "tsc": "tsc --noEmit",
