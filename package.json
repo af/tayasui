@@ -7,6 +7,7 @@
   "style": "src/",
   "scripts": {
     "build-dist": "bun build --minify --outfile=dist/bundle.css ./src/components.css",
+    "build-playground": "bun build --minify --outdir=dist/ ./playground/index.html",
     "dev": "bun run --hot ./playground/server.ts",
     "lint": "biome lint --write",
     "tsc": "tsc --noEmit",
