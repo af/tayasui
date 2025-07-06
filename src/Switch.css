@@ -1,19 +1,20 @@
 /* usage:
-    <switch-i>
-      <label>
-        <input type="checkbox" name="test" id="test" />
-      </label>
-    </switch-i>
-    <label htmlFor="test">Test</label>
+*   <switch-i>
+*     <label>
+*       <input type="checkbox" name="test" id="test" />
+*     </label>
+*   </switch-i>
+*   <label htmlFor="test">Test</label>
 */
 
 /* todo: parameterize with colors and clean up rem values */
 switch-i label {
   background: #aaa;
   display: inline-block;
-  border-radius: 1.2rem;
+  border-radius: var(--border-radius-full);
   padding: 4px;
   width: 3rem;
+  cursor: pointer;
 
   input[type="checkbox"] {
     display: none;
@@ -25,7 +26,7 @@ switch-i label::before {
   display: block;
   width: 1.2rem;
   height: 1.2rem;
-  border-radius: 50%;
+  border-radius: var(--border-radius-full);
   background: #fff;
   transition: all 0.2s ease-in-out;
 }

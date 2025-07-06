@@ -1,13 +1,31 @@
+/**
+ * example usage:
+ *   <card-i>
+ *     <h1>Card Title</h1>
+ *     <p>Card content</p>
+ *   </card-i>
+ */
 card-i {
   background: var(--color-bg-400);
-  border-radius: 5px;
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--shadow-m);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-m);
+  gap: var(--spacing-s);
   margin-bottom: var(--spacing-m);
   padding: var(--spacing-l);
 }
 
+card-i h1,
+card-i h2,
+card-i h3 {
+  margin-top: 0;
+}
+
 card-i> :last-child {
   margin-bottom: 0;
+}
+
+card-i[padding="s"] {
+  padding: var(--spacing-s);
 }

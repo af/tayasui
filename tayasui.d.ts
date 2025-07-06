@@ -15,7 +15,8 @@ type ZStackAttrs = {
 }
 
 type BadgeAttrs = {
-  type?: 'primary' | 'secondary' | 'danger' | 'inactive'
+  type?: 'primary' | 'danger' | 'neutral'
+  radius?: 's' | 'm' | 'full'
 }
 
 type CardAttrs = {
