@@ -10,19 +10,7 @@ type HStackAttrs = StackAttrs & {
   breakpoint?: 's' | 'm'
 }
 
-type ZStackAttrs = {
-  arrange?: 'fan-up' | 'fan-right'
-}
-
-type BadgeAttrs = {
-  type?: 'primary' | 'danger' | 'neutral'
-  radius?: 's' | 'm' | 'full'
-}
-
-type CardAttrs = {
-  padding?: 's' | 'm'
-}
-
+// biome-ignore lint/complexity/noBannedTypes: {} is intentional here
 type CustomElementProps<T = {}> = DetailedHTMLProps<HTMLAttributes<HTMLElement> & T, HTMLElement>
 
 // via https://til.jakelazaroff.com/typescript/add-custom-element-to-jsx-intrinsic-elements/
@@ -32,10 +20,22 @@ declare module 'react/jsx-runtime' {
     interface IntrinsicElements {
       'vstack-i': CustomElementProps<StackAttrs>
       'hstack-i': CustomElementProps<HStackAttrs>
-      'zstack-i': CustomElementProps<ZStackAttrs>
+      'zstack-i': CustomElementProps<{
+        arrange?: 'fan-up' | 'fan-right'
+      }>
 
-      'badge-i': CustomElementProps<BadgeAttrs>
-      'card-i': CustomElementProps<CardAttrs>
+      'skeleton-i': CustomElementProps<{
+        width?: 's' | 'm' | 'l' | 'xl'
+        height?: 's' | 'm' | 'l' | 'xl'
+        radius?: 's' | 'm' | 'full' | 'none'
+      }>
+      'badge-i': CustomElementProps<{
+        type?: 'primary' | 'danger' | 'neutral'
+        radius?: 's' | 'm' | 'full'
+      }>
+      'card-i': CustomElementProps<{
+        padding?: 's' | 'm'
+      }>
 
       'switch-i': CustomElementProps
       'labelledfield-i': CustomElementProps

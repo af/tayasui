@@ -1,0 +1,85 @@
+skeleton-i {
+  background: var(--color-fg-skeleton, #bbb);
+  border-radius: var(--border-radius-s);
+  overflow: hidden;
+  position: relative;
+  display: block;
+  height: var(--height, 1em);
+  width: var(--width, 100%);
+}
+
+skeleton-i::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  animation: skeleton-shimmer 2s infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+skeleton-i[width="xs"] {
+  width: 25%;
+}
+
+skeleton-i[width="s"] {
+  width: 50%;
+}
+
+skeleton-i[width="m"] {
+  width: 75%;
+}
+
+skeleton-i[width="l"] {
+  width: 100%;
+}
+
+skeleton-i[height="xs"] {
+  height: 0.5em;
+}
+
+skeleton-i[height="s"] {
+  height: 0.75em;
+}
+
+skeleton-i[height="m"] {
+  height: 1em;
+}
+
+skeleton-i[height="l"] {
+  height: 1.5em;
+}
+
+skeleton-i[height="xl"] {
+  height: 2em;
+}
+
+skeleton-i[radius="none"] {
+  border-radius: 0;
+}
+
+skeleton-i[radius="m"] {
+  border-radius: var(--border-radius-m);
+}
+
+skeleton-i[radius="l"] {
+  border-radius: var(--border-radius-l);
+}
+
+skeleton-i[radius="full"] {
+  border-radius: var(--border-radius-full);
+}

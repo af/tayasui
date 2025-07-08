@@ -1,3 +1,6 @@
+// Simple script intended only to verify the jsx typings work as expected
+// This is just meant to be used for tsc, not to be run
+
 const expectedUsage = <div>
   <hstack-i>
     hi
@@ -5,6 +8,7 @@ const expectedUsage = <div>
 
   <vstack-i>
     hello
+    <skeleton-i radius="full" />
   </vstack-i>
 
   <card-i padding="s">
@@ -16,9 +20,9 @@ const expectedUsage = <div>
 </div>
 
 // @ts-expect-error This is not a real element
-const invalid1 = <jstack-i>nonsense</jstack-i>
+const _invalid1 = <jstack-i>nonsense</jstack-i>
 
 // @ts-expect-error This is not a supported property
-const invalidProperty = <hstack-i asdf>nonsense</hstack-i>
+const _invalidProperty = <hstack-i asdf>nonsense</hstack-i>
 
 console.log(expectedUsage)
