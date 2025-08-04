@@ -5,6 +5,11 @@
 *   <label htmlFor="test">Test</label>
 */
 
+switch-i {
+  /* prevent extra margin below switch */
+  display: flex;
+}
+
 /* todo: parameterize with colors and clean up rem values */
 switch-i input[type="checkbox"] {
   appearance: none;

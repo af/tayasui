@@ -2,23 +2,31 @@ badge-i {
   align-items: center;
   background: var(--color-bg-brand);
   border-radius: var(--border-radius-m);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-s);
+  font-weight: 500;
   display: inline-flex;
   line-height: 1;
-  letter-spacing: 0.05em;
-  padding: 4px 6px;
+  padding: 4px 8px;
   gap: 4px;
 }
 
 badge-i[type="danger"] {
   color: var(--color-fg-danger);
   background: var(--color-bg-danger);
-  border: 1px solid var(--color-fg-danger);
 }
 
 badge-i[type="neutral"] {
   background: none;
   border: 1px solid var(--color-border);
+}
+
+badge-i[type="success"] {
+  color: var(--color-fg-success);
+  background: var(--color-bg-success);
+}
+
+badge-i[radius="none"] {
+  border-radius: 0;
 }
 
 badge-i[radius="s"] {

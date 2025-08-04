@@ -1,10 +1,11 @@
-/* usage:
-    <labelledfield-i>
-      <label>
-        <small>My Label</small>
-        <input type="text" name="test" />
-      </label>
-    </labelledfield-i>
+/**
+* example usage:
+*   <labelledfield-i>
+*     <label>
+*       <small>My Label</small>
+*       <input type="text" name="test" />
+*     </label>
+*   </labelledfield-i>
 */
 
 labelledfield-i {
@@ -19,7 +20,7 @@ labelledfield-i small {
   top: 0px;
   pointer-events: none;
 
-  color: var(--color-text-secondary);
+  color: var(--color-fg-secondary);
   display: block;
   font-size: 13px;
   font-weight: 600;
@@ -34,13 +35,15 @@ labelledfield-i textarea {
   padding: 15px 14px 0;
   height: 55px;
   min-width: 170px;
-  background: var(--color-bg-300);
+  background: var(--color-bg-900);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-s);
 }
 
 labelledfield-i select {
   -webkit-appearance: none;
   appearance: none;
-  color: var(--color-text-primary);
+  color: var(--color-fg-primary);
   cursor: pointer;
   /* hack to take the same height as its sibling input(s) */
   padding-top: 12px;
@@ -48,5 +51,5 @@ labelledfield-i select {
 
 /* Support for <div role="alert"> error messages below the input */
 labelledfield-i input:invalid:not(:placeholder-shown)~[role="alert"] {
-  color: var(--color-error);
+  color: var(--color-fg-danger);
 }

@@ -2,7 +2,6 @@
   "name": "tayasui",
   "version": "0.0.1",
   "description": "Experiments with custom elements",
-  "main": "index.js",
   "types": "tayasui.d.ts",
   "style": "src/",
   "scripts": {
