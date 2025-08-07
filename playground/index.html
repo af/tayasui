@@ -4,9 +4,35 @@
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>CSS Playground</title>
-    <link rel="stylesheet" href="./themes/basic.css" >
-    <link rel="stylesheet" href="/src/reset.css" >
-    <link rel="stylesheet" href="/src/components.css" >
+    <link rel="stylesheet" href="./themes/basic.css" />
+    <link rel="stylesheet" href="/src/reset.css" />
+    <link rel="stylesheet" href="/src/base.css" />
+    <link rel="stylesheet" href="/src/components.css" />
+    <style>
+      body {
+        display: flex;
+      }
+
+      body>nav {
+        border-right: 1px solid var(--color-border);
+        color: var(--color-fg-primary);
+        padding: var(--spacing-m);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
+
+      main {
+        max-width: 45em;
+        padding: var(--spacing-m);
+        flex: 1;
+      }
+
+      main>h2 {
+        font-size: 1.2rem;
+        margin: 2rem 0 0.5rem;
+      }
+    </style>
   </head>
   <body>
     <nav>
