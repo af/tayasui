@@ -18,6 +18,7 @@ type CustomElementProps<T = {}> = DetailedHTMLProps<HTMLAttributes<HTMLElement> 
 declare module 'react/jsx-runtime' {
   namespace JSX {
     interface IntrinsicElements {
+      'container-i': CustomElementProps<{ gap?: 's' | 'm' | 'l' }>
       'vstack-i': CustomElementProps<StackAttrs>
       'hstack-i': CustomElementProps<HStackAttrs>
       'zstack-i': CustomElementProps<{

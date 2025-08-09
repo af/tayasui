@@ -1,0 +1,46 @@
+/**
+ * example usage:
+ *   <container-i>
+ *     <h1>Page Title</h1>
+ *     <p>Content within a centered container</p>
+ *   </container-i>
+ */
+container-i,
+[data-as="container-i"] {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--container-width, 1200px);
+  width: 100%;
+
+  &[direction="row"],
+  &[direction="responsive"] {
+    flex-direction: row;
+  }
+
+  &[gap="s"] {
+    gap: var(--spacing-s);
+  }
+
+  &[gap="m"] {
+    gap: var(--spacing-m);
+  }
+
+  &[direction="row-reverse"] {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 767px) {
+
+  container-i,
+  [data-as="container-i"] {
+    padding-left: var(--spacing-mobile-side-padding, 1rem);
+    padding-right: var(--spacing-mobile-side-padding, 1rem);
+
+    &[direction="responsive"] {
+      flex-direction: column;
+    }
+  }
+}
