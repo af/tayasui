@@ -20,6 +20,10 @@ hstack-i {
 
 vstack-i,
 hstack-i {
+  &[gap="xs"] {
+    gap: var(--sp-xs);
+  }
+
   &[gap="s"] {
     gap: var(--sp-s);
   }
@@ -52,8 +56,36 @@ hstack-i {
     align-items: stretch;
   }
 
+  &[justify="center"] {
+    justify-content: center;
+  }
+
   &[justify="space-between"] {
     justify-content: space-between;
+  }
+
+  &[justify="space-around"] {
+    justify-content: space-around;
+  }
+
+  &[justify="space-evenly"] {
+    justify-content: space-evenly;
+  }
+
+  &[justify="flex-end"] {
+    justify-content: flex-end;
+  }
+
+  &[wrap="wrap"] {
+    flex-wrap: wrap;
+  }
+
+  &[wrap="nowrap"] {
+    flex-wrap: nowrap;
+  }
+
+  &[wrap="wrap-reverse"] {
+    flex-wrap: wrap-reverse;
   }
 }
 

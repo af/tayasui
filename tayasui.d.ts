@@ -2,8 +2,9 @@ import type { DetailedHTMLProps, HTMLAttributes } from 'react'
 
 type StackAttrs = {
   align?: 'start' | 'end' | 'center' | 'baseline' | 'stretch'
-  justify?: 'start' | 'space-between'
-  gap?: 's' | 'm' | 'l'
+  justify?: 'center' | 'start' | 'space-between' | 'space-around' | 'space-evenly' | 'flex-end'
+  wrap?: 'wrap' | 'nowrap' | 'wrap-reverse'
+  gap?: 'xs' | 's' | 'm' | 'l'
 }
 
 type HStackAttrs = StackAttrs & {
