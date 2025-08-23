@@ -11,125 +11,164 @@
     <style>
       body {
         display: flex;
+        padding: 1rem 0;
       }
 
-      body>nav {
-        border-right: 1px solid var(--color-border);
-        color: var(--color-fg-primary);
+      nav {
+        height: fit-content;
         padding: var(--spacing-m);
         position: sticky;
         top: 0;
-        height: 100vh;
       }
 
       main {
-        max-width: 45em;
-        padding: var(--spacing-m);
+        background-color: var(--color-bg-400);
+        border-radius: var(--border-radius-m);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* FIXME: update this */
+        max-width: 50em;
+        padding: var(--spacing-l);
         flex: 1;
       }
 
       main>h2 {
-        font-size: 1.2rem;
-        margin: 2rem 0 0.5rem;
+        margin: 2rem calc(var(--spacing-l) * -1) 0.5rem;
+        border-top: 1px solid var(--color-border);
+        padding: 1rem 1.5rem;
+        font-size: 0.8rem;
+        font-family: monospace;
+
+        &::before {
+          content: "<";
+          color: var(--color-fg-tertiary);
+        }
+        &::after {
+          content: ">";
+          color: var(--color-fg-tertiary);
+        }
       }
     </style>
   </head>
   <body>
-    <nav>
-      <h1>Tayasui</h1>
-      TODO nav links here
-    </nav>
-    <main>
-      <p>A dev environment for CSS custom elements</p>
+    <container-i direction="responsive" gap="m">
+      <nav>
+        <h1>Tayasui</h1>
+        <div>容易い</div>
+      </nav>
+      <main>
+        <p>A dev environment for CSS custom elements</p>
 
-      <h2>card-i</h2>
-      <hstack-i gap="m" breakpoint="s">
-        <card-i contenteditable>
+        <h2>card-i</h2>
+        <hstack-i gap="m" breakpoint="s">
+          <card-i contenteditable>
+            <hstack-i>
+              <h2>Card Component</h2>
+              <badge-i>New</badge-i>
+            </hstack-i>
+            <p>This is an example card with title and content. Edit me!</p>
+          </card-i>
+          <a href="#fake" data-as="card-i">
+            <hstack-i>
+              <h2>Linked Card</h2>
+              <badge-i type="neutral">Neat</badge-i>
+            </hstack-i>
+            <p>
+              An example using <code>data-as="card-i"</code>instead of a custom element
+            </p>
+          </a>
+        </hstack-i>
+
+        <h2>labelledfield-i</h2>
+        <hstack-i gap="s">
+          <labelledfield-i>
+            <label>
+              <small contenteditable>Input</small>
+              <input type="text" name="sample" placeholder="Placeholder text" />
+            </label>
+          </labelledfield-i>
+          <labelledfield-i>
+            <label>
+              <small contenteditable>Select</small>
+              <select name="sample">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+            </label>
+          </labelledfield-i>
+          <labelledfield-i>
+            <label>
+              <small contenteditable>It's a textarea</small>
+              <textarea name="sample"></textarea>
+            </label>
+          </labelledfield-i>
+        </hstack-i>
+
+        <h2>switch-i</h2>
+        <hstack-i>
+          <switch-i>
+            <input type="checkbox" name="toggle" id="toggle" />
+          </switch-i>
+          <label for="toggle">Toggle Switch</label>
+        </hstack-i>
+
+        <h2>badge-i</h2>
+        <vstack-i gap="s">
           <hstack-i>
-            <h2>Card Component</h2>
-            <badge-i>New</badge-i>
+            <badge-i contenteditable>Primary</badge-i>
+            <badge-i type="neutral" contenteditable>Neutral</badge-i>
+            <badge-i type="danger" radius="full" contenteditable>Danger</badge-i>
+            <badge-i type="success" radius="full" contenteditable>Success</badge-i>
           </hstack-i>
-          <p>This is an example card with title and content. Edit me!</p>
-        </card-i>
-        <card-i contenteditable>
           <hstack-i>
-            <h2>Another Card</h2>
-            <badge-i type="neutral">Old</badge-i>
+            <badge-i type="neutral" contenteditable>Default</badge-i>
+            <badge-i type="neutral" radius="none" contenteditable>No radius</badge-i>
+            <badge-i type="neutral" radius="full" contenteditable>Full radius</badge-i>
           </hstack-i>
-          <p>This is an example card with title and content.</p>
-        </card-i>
-      </hstack-i>
+        </vstack-i>
 
-      <h2>labelledfield-i</h2>
-      <labelledfield-i>
-        <label>
-          <small contenteditable>Sample Input</small>
-          <input type="text" name="sample" />
-        </label>
-      </labelledfield-i>
+        <h2>skeleton-i</h2>
+        <vstack-i>
+          <skeleton-i></skeleton-i>
+          <skeleton-i width="s"></skeleton-i>
+          <!-- fixme: animation not right -->
+          <skeleton-i style="--width: 2rem; --height: 2rem;" radius="full"></skeleton-i>
+        </vstack-i>
 
-      <h2>switch-i</h2>
-      <hstack-i>
-        <switch-i>
-          <input type="checkbox" name="toggle" id="toggle" />
-        </switch-i>
-        <label for="toggle">Toggle Switch</label>
-      </hstack-i>
-
-      <h2>badge-i</h2>
-      <hstack-i>
-        <badge-i contenteditable>Primary</badge-i>
-        <badge-i type="neutral" contenteditable>Neutral</badge-i>
-        <badge-i type="danger" radius="full" contenteditable>Danger</badge-i>
-        <badge-i type="success" radius="full" contenteditable>Success</badge-i>
-      </hstack-i>
-      <hstack-i>
-        <badge-i type="neutral" contenteditable>Default</badge-i>
-        <badge-i type="neutral" radius="none" contenteditable>No radius</badge-i>
-        <badge-i type="neutral" radius="full" contenteditable>Full radius</badge-i>
-      </hstack-i>
-
-      <h2>skeleton-i</h2>
-      <vstack-i>
-        <skeleton-i></skeleton-i>
-        <skeleton-i width="s"></skeleton-i>
-        <!-- fixme: animation not right -->
-        <skeleton-i style="--width: 2rem; --height: 2rem;" radius="full"></skeleton-i>
-      </vstack-i>
-
-      <h2>hstack-i</h2>
-      <hstack-i>
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-      </hstack-i>
-
-      <h2>vstack-i</h2>
-      <vstack-i>
-        <div>Item 1</div>
-        <div>Item 2</div>
-        <div>Item 3</div>
-      </vstack-i>
-
-      <h2>zstack-i</h2>
-      <hstack-i>
-        <zstack-i>
+        <h2>hstack-i</h2>
+        <hstack-i>
           <card-i padding="s">Item 1</card-i>
           <card-i padding="s">Item 2</card-i>
           <card-i padding="s">Item 3</card-i>
-        </zstack-i>
+        </hstack-i>
 
-        <zstack-i arrange="fan-up">
+        <h2>vstack-i</h2>
+        <vstack-i>
           <card-i padding="s">Item 1</card-i>
           <card-i padding="s">Item 2</card-i>
           <card-i padding="s">Item 3</card-i>
-        </zstack-i>
-        <zstack-i arrange="fan-right">
-          <card-i padding="s">Item 1</card-i>
-          <card-i padding="s">Item 2</card-i>
-          <card-i padding="s">Item 3</card-i>
-        </zstack-i>
-      </hstack-i>
-    </main>
+        </vstack-i>
+
+        <h2>zstack-i</h2>
+        <hstack-i>
+          <zstack-i>
+            <card-i padding="s">Item 1</card-i>
+            <card-i padding="s">Item 2</card-i>
+            <card-i padding="s">Item 3</card-i>
+          </zstack-i>
+
+          <zstack-i arrange="fan-up">
+            <card-i padding="s">Item 1</card-i>
+            <card-i padding="s">Item 2</card-i>
+            <card-i padding="s">Item 3</card-i>
+          </zstack-i>
+          <zstack-i arrange="fan-right">
+            <card-i padding="s">Item 1</card-i>
+            <card-i padding="s">Item 2</card-i>
+            <card-i padding="s">Item 3</card-i>
+          </zstack-i>
+        </hstack-i>
+      </main>
+    </container-i>
   </body>
 </html>
