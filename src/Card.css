@@ -5,8 +5,10 @@
  *     <p>Card content</p>
  *   </card-i>
  */
-card-i {
-  background: var(--color-bg-400);
+card-i,
+[data-as="card-i"] {
+  background: var(--color-bg-500);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius-m);
   box-shadow: var(--shadow-m);
   display: flex;
@@ -14,18 +16,18 @@ card-i {
   gap: var(--spacing-s);
   margin-bottom: var(--spacing-m);
   padding: var(--spacing-l);
-}
+  /* for <a data-as="card-i"> */
+  text-decoration: none;
 
-card-i h1,
-card-i h2,
-card-i h3 {
-  margin-top: 0;
-}
+  &>*:first-child {
+    margin-top: 0;
+  }
 
-card-i> :last-child {
-  margin-bottom: 0;
-}
+  &>*:last-child {
+    margin-bottom: 0;
+  }
 
-card-i[padding="s"] {
-  padding: var(--spacing-s);
+  &[padding="s"] {
+    padding: var(--spacing-s);
+  }
 }

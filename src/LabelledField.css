@@ -13,43 +13,50 @@ labelledfield-i {
   display: inline-flex;
   flex-direction: column;
   align-self: flex-start;
-}
+  --side-padding: var(--spacing-m);
 
-labelledfield-i small {
-  position: absolute;
-  top: 0px;
-  pointer-events: none;
+  small {
+    position: absolute;
+    top: 0px;
+    pointer-events: none;
 
-  color: var(--color-fg-secondary);
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  padding: 5px 14px 0;
-}
+    color: var(--color-fg-secondary);
+    display: block;
+    font-family: var(--font-family-micro, --font-family-text);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    padding: 5px var(--side-padding) 0;
+  }
 
-labelledfield-i input,
-labelledfield-i select,
-labelledfield-i textarea {
-  flex: 1 0 auto;
-  padding: 15px 14px 0;
-  height: 55px;
-  min-width: 170px;
-  background: var(--color-bg-500);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-s);
-}
+  input,
+  select,
+  textarea {
+    flex: 1 0 auto;
+    padding: var(--spacing-m) var(--side-padding) 0;
+    min-height: 55px;
+    min-width: 170px;
+    background: var(--color-bg-500);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-s);
 
-labelledfield-i select {
-  -webkit-appearance: none;
-  appearance: none;
-  color: var(--color-fg-primary);
-  cursor: pointer;
-  /* hack to take the same height as its sibling input(s) */
-  padding-top: 12px;
-}
+    &:hover {
+      border-color: var(--color-border-hover);
+    }
+  }
 
-/* Support for <div role="alert"> error messages below the input */
-labelledfield-i input:invalid:not(:placeholder-shown)~[role="alert"] {
-  color: var(--color-fg-danger);
+  textarea {
+    padding-top: var(--spacing-l);
+  }
+
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    color: var(--color-fg-primary);
+    cursor: pointer;
+  }
+
+  /* Support for <div role="alert"> error messages below the input */
+  input:invalid:not(:placeholder-shown)~[role="alert"] {
+    color: var(--color-fg-danger);
+  }
 }
