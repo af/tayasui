@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./themes/basic.css" />
     <link rel="stylesheet" href="/src/reset.css" />
     <link rel="stylesheet" href="/src/base.css" />
+    <link rel="stylesheet" href="/src/Button.css" />
     <link rel="stylesheet" href="/src/components.css" />
     <style>
       body {
@@ -167,6 +168,33 @@
             <card-i padding="s">Item 2</card-i>
             <card-i padding="s">Item 3</card-i>
           </zstack-i>
+        </hstack-i>
+
+        <h2>button</h2>
+        <button>
+          <svg viewBox="0 0 20 20" width="16" height="16"><path d="m9 16.17 6-6-1.42-1.42L9 13.34l-2.83-2.83-1.42 1.42z" fill="currentColor" /></svg>
+          Button
+        </button>
+        <button aria-busy="true">Loading</button>
+        <button disabled>Disabled</button>
+        <button data-variant="outline">Outline</button>
+        <button data-variant="outline" data-action="danger">Danger</button>
+        <a href="#fake" data-as="button">Link Button</a>
+        <br />
+        <br />
+
+        <hstack-i>
+        <buttongroup-i>
+        <button>group 1</button>
+        <button>group 2</button>
+        <button>group 3</button>
+        </buttongroup-i>
+
+        <buttongroup-i>
+        <button data-variant="outline">group 1</button>
+        <button data-variant="outline">group 2</button>
+        <button data-variant="outline">group 3</button>
+        </buttongroup-i>
         </hstack-i>
       </main>
     </container-i>
