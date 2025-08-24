@@ -1,6 +1,7 @@
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./components.css');
 
 /* move to components.css? */
 @import url('./Button.css');
+
+@import url('./components.css');

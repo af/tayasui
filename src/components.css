@@ -1,9 +1,12 @@
-@import url('./Stack.css');
-@import url('./ZStack.css');
-@import url('./Container.css');
+@import url('./Stack.css') layer(tayasui.components);
+@import url('./ZStack.css') layer(tayasui.components);
+@import url('./Container.css') layer(tayasui.components);
 
-@import url('./Badge.css');
-@import url('./Card.css');
-@import url('./LabelledField.css');
-@import url('./Switch.css');
-@import url('./Skeleton.css');
+@import url('./Badge.css') layer(tayasui.components);
+@import url('./Card.css') layer(tayasui.components);
+@import url('./LabelledField.css') layer(tayasui.components);
+@import url('./Switch.css') layer(tayasui.components);
+@import url('./Skeleton.css') layer(tayasui.components);
+
+/* bun bundler doesn't like having this line above the @imports */
+@layer tayasui.components {}

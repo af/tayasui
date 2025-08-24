@@ -1,115 +1,117 @@
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+@layer tayasui.base {
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
   }
 
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* todo: add data-* attributes to tayasui.d.ts? */
-/* todo: better name than data-action */
-button,
-[data-as="button"] {
-  --color: var(--color-bg-cta);
-  --radius: var(--border-radius-m);
-  --borderWidth: 1px;
-
-  display: inline-flex;
-  gap: var(--sp-xs);
-  align-items: center;
-  background-color: var(--color);
-  color: var(--color-fg-cta);
-  font-family: inherit;
-  padding: var(--sp-xs) var(--sp-m);
-  border: var(--borderWidth) solid var(--color);
-  /* ensure equivalent height to outline buttons */
-  border-radius: var(--radius);
-  text-decoration: none;
-  position: relative;
-
-  &:hover {
-    --color: var(--color-bg-cta-hover, var(--color-bg-cta));
-    /* ensure a[data-as="button"] hover color works */
-    color: var(--color-fg-cta);
-  }
-
-  &[data-variant="outline"] {
-    color: var(--color);
-    background-color: transparent;
-  }
-
-  &[data-variant="text"] {
-    --color: var(--color-fg-link);
-    color: var(--color);
-    background-color: transparent;
-    border: none;
-    padding: 0;
-  }
-
-  &[data-action="danger"] {
-    --color: var(--color-fg-danger);
-  }
-
-  &:disabled,
-  &:disabled:hover {
-    /* don't have hover state override this */
+  /* todo: add data-* attributes to tayasui.d.ts? */
+  /* todo: better name than data-action */
+  button,
+  [data-as="button"] {
     --color: var(--color-bg-cta);
-    opacity: 0.75;
-    cursor: not-allowed;
-  }
+    --radius: var(--border-radius-m);
+    --borderWidth: 1px;
 
-  &[aria-busy] {
-    /* hide text so only spinner is visible */
-    color: transparent;
-  }
-
-  &[aria-busy="true"]::before {
-    /* TODO: center this in the button when it's visible */
-    /* tricky because we're already using transform for the animation */
-    content: '';
-    width: 1em;
-    height: 1em;
+    display: inline-flex;
+    gap: var(--sp-xs);
+    align-items: center;
+    background-color: var(--color);
     color: var(--color-fg-cta);
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spin 1s linear infinite;
+    font-family: inherit;
+    padding: var(--sp-xs) var(--sp-m);
+    border: var(--borderWidth) solid var(--color);
+    /* ensure equivalent height to outline buttons */
+    border-radius: var(--radius);
+    text-decoration: none;
+    position: relative;
 
-    /* this appears to successfully center the spinner in the button */
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
+    &:hover {
+      --color: var(--color-bg-cta-hover, var(--color-bg-cta));
+      /* ensure a[data-as="button"] hover color works */
+      color: var(--color-fg-cta);
+    }
+
+    &[data-variant="outline"] {
+      color: var(--color);
+      background-color: transparent;
+    }
+
+    &[data-variant="text"] {
+      --color: var(--color-fg-link);
+      color: var(--color);
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    &[data-action="danger"] {
+      --color: var(--color-fg-danger);
+    }
+
+    &:disabled,
+    &:disabled:hover {
+      /* don't have hover state override this */
+      --color: var(--color-bg-cta);
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+
+    &[aria-busy] {
+      /* hide text so only spinner is visible */
+      color: transparent;
+    }
+
+    &[aria-busy="true"]::before {
+      /* TODO: center this in the button when it's visible */
+      /* tricky because we're already using transform for the animation */
+      content: '';
+      width: 1em;
+      height: 1em;
+      color: var(--color-fg-cta);
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s linear infinite;
+
+      /* this appears to successfully center the spinner in the button */
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    /* prevent icons from getting squished */
+    /* TODO: fix alignment bug when icon is taller than text */
+    svg {
+      flex-shrink: 0;
+    }
   }
 
-  /* prevent icons from getting squished */
-  /* TODO: fix alignment bug when icon is taller than text */
-  svg {
-    flex-shrink: 0;
-  }
-}
+  buttongroup-i {
+    display: flex;
+    gap: 1px;
 
-buttongroup-i {
-  display: flex;
-  gap: 1px;
+    button {
+      border-radius: 0;
+    }
 
-  button {
-    border-radius: 0;
-  }
+    button:first-child {
+      border-top-left-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+    }
 
-  button:first-child {
-    border-top-left-radius: var(--radius);
-    border-bottom-left-radius: var(--radius);
-  }
+    button:last-child {
+      border-top-right-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+    }
 
-  button:last-child {
-    border-top-right-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-  }
-
-  button[data-variant="outline"]:not(:first-child) {
-    margin-left: calc(-1px - var(--borderWidth));
+    button[data-variant="outline"]:not(:first-child) {
+      margin-left: calc(-1px - var(--borderWidth));
+    }
   }
 }

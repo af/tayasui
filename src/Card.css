@@ -11,6 +11,8 @@ card-i,
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-m);
   box-shadow: var(--shadow-m);
+  /* prevent <a data-as="card-i"> from using the default link color */
+  color: inherit;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-s);

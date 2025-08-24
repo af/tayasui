@@ -1,3 +1,5 @@
+@layer tayasui.reset, tayasui.base, tayasui.components, app;
+
 :root {
   /* Colors - Background */
   --color-bg-brand: #d0daff;

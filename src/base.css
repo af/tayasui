@@ -1,19 +1,21 @@
 /* Base application of custom properties to built-in elements */
 
-html {
-  background-color: var(--color-bg-0);
-  color: var(--color-fg-primary);
-  font-family: var(--font-family-text);
-  font-size: var(--font-size-m);
-  min-height: 100vh;
-}
+@layer tayasui.base {
+  html {
+    background-color: var(--color-bg-0);
+    color: var(--color-fg-primary);
+    font-family: var(--font-family-text);
+    font-size: var(--font-size-m);
+    min-height: 100vh;
+  }
 
-/* todo headings? */
+  /* todo headings? */
 
-a {
-  color: var(--color-fg-link);
-}
+  a {
+    color: var(--color-fg-link);
+  }
 
-a:hover {
-  color: var(--color-fg-link-hover);
+  a:hover {
+    color: var(--color-fg-link-hover);
+  }
 }
