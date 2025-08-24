@@ -8,6 +8,8 @@
   }
 }
 
+/* todo: add data-* attributes to tayasui.d.ts? */
+/* todo: better name than data-action */
 button,
 [data-as="button"] {
   --color: var(--color-bg-cta);
@@ -36,6 +38,14 @@ button,
   &[data-variant="outline"] {
     color: var(--color);
     background-color: transparent;
+  }
+
+  &[data-variant="text"] {
+    --color: var(--color-fg-link);
+    color: var(--color);
+    background-color: transparent;
+    border: none;
+    padding: 0;
   }
 
   &[data-action="danger"] {
