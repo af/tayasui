@@ -1,6 +1,6 @@
 badge-i {
   align-items: center;
-  background: var(--color-bg-brand);
+  background: var(--color-bg-highlight);
   border-radius: var(--border-radius-m);
   font-size: var(--font-size-xs);
   font-family: var(--font-family-micro, --font-family-text);

@@ -3,6 +3,7 @@
 @import url('./Container.css') layer(tayasui.components);
 
 @import url('./Badge.css') layer(tayasui.components);
+@import url('./Banner.css') layer(tayasui.components);
 @import url('./Card.css') layer(tayasui.components);
 @import url('./LabelledField.css') layer(tayasui.components);
 @import url('./Switch.css') layer(tayasui.components);

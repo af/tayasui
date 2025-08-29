@@ -1,0 +1,30 @@
+banner-i {
+  --color: var(--color-fg-highlight);
+  --bg: var(--color-bg-highlight);
+
+  background-color: var(--bg);
+  color: var(--color);
+  display: block;
+  padding: var(--sp-m);
+  border-radius: var(--border-radius-m);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &[level="success"] {
+    --color: var(--color-fg-success);
+    --bg: var(--color-bg-success);
+  }
+
+  &[level="danger"] {
+    --color: var(--color-fg-danger);
+    --bg: var(--color-bg-danger);
+  }
+}
