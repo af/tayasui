@@ -1,5 +1,6 @@
 node_modules/
 dist/
+nursery/
 
 .DS_Store
 TODO.md

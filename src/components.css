@@ -1,5 +1,4 @@
 @import url('./Stack.css') layer(tayasui.components);
-@import url('./ZStack.css') layer(tayasui.components);
 @import url('./Container.css') layer(tayasui.components);
 
 @import url('./Badge.css') layer(tayasui.components);
