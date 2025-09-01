@@ -56,7 +56,7 @@ labelledfield-i {
   }
 
   /* Support for <div role="alert"> error messages below the input */
-  input:invalid:not(:placeholder-shown)~[role="alert"] {
+  input:user-invalid~[role="alert"] {
     color: var(--color-fg-danger);
   }
 }
