@@ -2,6 +2,7 @@ badge-i {
   align-items: center;
   background: var(--color-bg-highlight);
   border-radius: var(--border-radius-m);
+  color: var(--color-fg-highlight);
   font-size: var(--font-size-xs);
   font-family: var(--font-family-micro, --font-family-text);
   font-weight: 500;
@@ -16,6 +17,7 @@ badge-i {
   }
 
   &[type="neutral"] {
+    color: inherit;
     background: none;
     border: 1px solid var(--color-border);
   }

@@ -1,11 +1,13 @@
 banner-i {
   --color: var(--color-fg-highlight);
   --bg: var(--color-bg-highlight);
+  --padding: var(--sp-m);
 
   background-color: var(--bg);
+  border: 1px solid currentColor;
   color: var(--color);
   display: block;
-  padding: var(--sp-m);
+  padding: var(--padding);
   border-radius: var(--border-radius-m);
 
   h1,

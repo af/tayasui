@@ -61,7 +61,7 @@
       cursor: not-allowed;
     }
 
-    &[aria-busy] {
+    &[aria-busy="true"] {
       /* hide text so only spinner is visible */
       color: transparent;
     }
