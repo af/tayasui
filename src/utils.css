@@ -1,0 +1,19 @@
+.primary {
+  color: var(--color-fg-primary);
+}
+
+.secondary {
+  color: var(--color-fg-secondary);
+}
+
+.sm-caps {
+  text-transform: uppercase;
+  color: var(--color-fg-secondary);
+  font-size: var(--font-size-s);
+  letter-spacing: 0.05em;
+}
+
+.naked {
+  border: none;
+  background: none;
+}

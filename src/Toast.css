@@ -1,0 +1,35 @@
+toastgroup-i {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+}
+
+toast-i {
+  --bg: var(--color-bg-900);
+  --shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-m);
+  background-color: var(--bg);
+  display: block;
+  padding: var(--spacing-m);
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
