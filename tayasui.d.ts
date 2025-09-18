@@ -26,6 +26,10 @@ declare module 'react/jsx-runtime' {
         arrange?: 'fan-up' | 'fan-right'
       }>
 
+      'alert-i': CustomElementProps<{
+        variant?: 'callout'
+        level?: 'success' | 'danger'
+      }>
       'skeleton-i': CustomElementProps<{
         width?: 's' | 'm' | 'l' | 'xl'
         height?: 's' | 'm' | 'l' | 'xl'

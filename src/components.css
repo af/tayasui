@@ -1,8 +1,8 @@
 @import url('./Stack.css') layer(tayasui.components);
 @import url('./Container.css') layer(tayasui.components);
 
+@import url('./Alert.css') layer(tayasui.components);
 @import url('./Badge.css') layer(tayasui.components);
-@import url('./Banner.css') layer(tayasui.components);
 @import url('./Card.css') layer(tayasui.components);
 @import url('./LabelledField.css') layer(tayasui.components);
 @import url('./Switch.css') layer(tayasui.components);
