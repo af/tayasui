@@ -20,6 +20,7 @@
     display: inline-flex;
     gap: var(--sp-xs);
     align-items: center;
+    justify-content: center;
     background-color: var(--color);
     color: var(--color-fg-cta);
     font-family: inherit;
