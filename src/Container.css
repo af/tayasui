@@ -11,13 +11,21 @@ container-i,
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--container-width, 1100px);
+  max-width: var(--container-width-max, 1100px);
   min-width: 300px;
   width: 100%;
 
   &[direction="row"],
   &[direction="responsive"] {
     flex-direction: row;
+  }
+
+  &[direction="row-reverse"] {
+    flex-direction: row-reverse;
+  }
+
+  &[variant="narrow"] {
+    max-width: var(--container-width-narrow, 400px);
   }
 
   &[gap="s"] {
@@ -28,8 +36,8 @@ container-i,
     gap: var(--spacing-m);
   }
 
-  &[direction="row-reverse"] {
-    flex-direction: row-reverse;
+  &[gap="l"] {
+    gap: var(--spacing-l);
   }
 }
 
