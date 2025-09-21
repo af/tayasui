@@ -2,6 +2,7 @@
   "name": "tayasui",
   "version": "0.0.1",
   "description": "Experiments with custom elements",
+  "license": "MIT",
   "types": "tayasui.d.ts",
   "style": "src/",
   "scripts": {
@@ -12,18 +13,19 @@
     "tsc": "tsc --noEmit",
     "test": "biome lint && bun tsc"
   },
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "github.com/af/tayasui"
   },
   "keywords": [
-    "css"
+    "css",
+    "custom-elements"
   ],
   "author": "Aaron Franks (http://aaronfranks.com/)",
-  "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "^2.0.6",
-    "@types/react": "^19.1.8",
-    "typescript": "^5.8.3"
+    "@biomejs/biome": "^2.2.4",
+    "@types/react": "^19.1.13",
+    "typescript": "^5.9.2"
   }
 }
