@@ -6,6 +6,9 @@
     color: var(--color-fg-primary);
     font-family: var(--font-family-text);
     font-size: var(--font-size-m);
+  }
+
+  body {
     min-height: 100dvh;
   }
 
@@ -22,6 +25,7 @@
   input,
   textarea,
   select {
+    background: none;
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-s);
     padding: var(--spacing-xs) var(--spacing-s);

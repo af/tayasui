@@ -67,4 +67,15 @@
     line-height: 1.2;
     text-wrap: balance;
   }
+
+  /* https://meowni.ca/hidden.is.a.lie.html */
+  [hidden] {
+    display: none !important;
+  }
+
+  [aria-disabled="true"],
+  [disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
