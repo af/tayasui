@@ -23,6 +23,7 @@ declare module 'react/jsx-runtime' {
         direction?: 'column' | 'row' | 'row-reverse' | 'responsive'
         variant?: 'narrow'
         gap?: 's' | 'm' | 'l'
+        vpad?: 's' | 'm' | 'l' | 'xl'
       }>
       'vstack-i': CustomElementProps<StackAttrs>
       'hstack-i': CustomElementProps<HStackAttrs>

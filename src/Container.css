@@ -7,12 +7,15 @@
  */
 container-i,
 [data-as="container-i"] {
+  --vpad: 0;
   display: flex;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   max-width: var(--container-width-max, 1100px);
   min-width: 300px;
+  padding-bottom: var(--vpad);
+  padding-top: var(--vpad);
   width: 100%;
 
   &[direction="row"],
@@ -38,6 +41,22 @@ container-i,
 
   &[gap="l"] {
     gap: var(--spacing-l);
+  }
+
+  &[vpad="s"] {
+    --vpad: var(--spacing-s);
+  }
+
+  &[vpad="m"] {
+    --vpad: var(--spacing-m);
+  }
+
+  &[vpad="l"] {
+    --vpad: var(--spacing-l);
+  }
+
+  &[vpad="xl"] {
+    --vpad: var(--spacing-xl);
   }
 }
 
