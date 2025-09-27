@@ -1,13 +1,15 @@
-/* TODO: change to alert[type="banner"] and alert[type="callout"] (left border) */
 alert-i {
   --color: var(--color-fg-highlight);
   --bg: var(--color-bg-highlight);
   --padding: var(--sp-m);
+  --gap: var(--sp-xs);
 
   background-color: var(--bg);
-  border: 1px solid currentColor;
+  border: 0.5px solid currentColor;
   color: var(--color);
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
   padding: var(--padding);
   border-radius: var(--border-radius-m);
 
@@ -24,6 +26,11 @@ alert-i {
   &[level="success"] {
     --color: var(--color-fg-success);
     --bg: var(--color-bg-success);
+  }
+
+  &[level="warn"] {
+    --color: var(--color-fg-warn);
+    --bg: var(--color-bg-warn);
   }
 
   &[level="danger"] {

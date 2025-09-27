@@ -5,13 +5,15 @@
   --sp-l: 2rem;
 }
 
-vstack-i {
+vstack-i,
+[data-as="vstack-i"] {
   display: flex;
   flex-direction: column;
   gap: var(--sp-s);
 }
 
-hstack-i {
+hstack-i,
+[data-as="hstack-i"] {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -19,7 +21,9 @@ hstack-i {
 }
 
 vstack-i,
-hstack-i {
+hstack-i,
+[data-as="hstack-i"],
+[data-as="vstack-i"] {
   &[gap="xs"] {
     gap: var(--sp-xs);
   }

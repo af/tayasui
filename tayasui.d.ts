@@ -37,7 +37,6 @@ declare module 'react/jsx-runtime' {
       }>
       'skeleton-i': CustomElementProps<{
         width?: 's' | 'm' | 'l' | 'xl'
-        height?: 's' | 'm' | 'l' | 'xl'
         radius?: 's' | 'm' | 'full' | 'none'
       }>
       'badge-i': CustomElementProps<{

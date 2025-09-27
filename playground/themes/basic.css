@@ -27,6 +27,8 @@
   /* Colors - Status */
   --color-fg-highlight: #007aff;
   --color-bg-highlight: #ddeeff;
+  --color-fg-warn: #f0a30a;
+  --color-bg-warn: #fff8e6;
   --color-fg-danger: #e03b30;
   --color-bg-danger: #ffebeb;
   --color-fg-success: #1a7f37;
@@ -40,11 +42,11 @@
   --font-size-xl: 24px;
   --font-size-xxl: 30px;
 
-  --border-radius-s: 2px;
+  --border-radius-s: 3px;
   --border-radius-m: 6px;
   --border-radius-full: 999px;
 
-  --shadow-m: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-m: 0 3px 8px rgba(0, 0, 0, 0.06);
 
   /* Stack Spacing (sp prefix) */
   --sp-xs: 0.25rem;

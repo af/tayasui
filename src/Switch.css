@@ -42,8 +42,3 @@ switch-i input:checked {
     transform: translateX(1.25rem);
   }
 }
-
-switch-i input[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-}

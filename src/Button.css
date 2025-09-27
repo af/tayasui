@@ -14,7 +14,7 @@
   button,
   [data-as="button"] {
     --color: var(--color-bg-cta);
-    --radius: var(--border-radius-m);
+    --radius: var(--border-radius-s);
     --borderWidth: 1px;
 
     display: inline-flex;
@@ -58,8 +58,6 @@
     &:disabled:hover {
       /* don't have hover state override this */
       --color: var(--color-bg-cta);
-      opacity: 0.75;
-      cursor: not-allowed;
     }
 
     &[aria-busy="true"] {

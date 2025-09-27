@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Playground</title>
-    <link rel="stylesheet" href="./themes/basic.css" />
-    <link rel="stylesheet" href="/src/all.css" />
+    <link rel="stylesheet" href="./themes/basic.css">
+    <link rel="stylesheet" href="/src/all.css">
     <style>
       body {
         display: flex;
@@ -77,35 +77,46 @@
         </hstack-i>
 
         <h2>labelledfield-i</h2>
-        <hstack-i gap="s">
+        <form data-as="hstack-i" gap="s">
           <labelledfield-i>
             <label>
-              <small contenteditable>Input</small>
-              <input type="text" name="sample" placeholder="Placeholder text" />
+              <small>Name</small>
+              <input required type="text" name="name" placeholder="Placeholder text">
             </label>
           </labelledfield-i>
           <labelledfield-i>
             <label>
-              <small contenteditable>Select</small>
+              <small>Email</small>
+              <input required type="email" name="email" placeholder="you@example.com">
+            </label>
+          </labelledfield-i>
+          <labelledfield-i>
+            <label>
+              <small>Role</small>
               <select name="sample">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
+                <option value="1">Designer</option>
+                <option value="2">Engineer</option>
+                <option value="3">Manager</option>
               </select>
             </label>
           </labelledfield-i>
+          <button type="submit">Do it</button>
+        </form>
+
+        <vstack-i gap="s">
+          With a textarea...
           <labelledfield-i>
             <label>
-              <small contenteditable>It's a textarea</small>
+              <small>It's a textarea</small>
               <textarea name="sample"></textarea>
             </label>
           </labelledfield-i>
-        </hstack-i>
+        </vstack-i>
 
         <h2>switch-i</h2>
         <hstack-i>
           <switch-i>
-            <input type="checkbox" name="toggle" id="toggle" />
+            <input type="checkbox" name="toggle" id="toggle">
           </switch-i>
           <label for="toggle">Toggle Switch</label>
         </hstack-i>
@@ -116,6 +127,7 @@
             <badge-i contenteditable>Primary</badge-i>
             <badge-i type="neutral" contenteditable>Neutral</badge-i>
             <badge-i type="danger" radius="full" contenteditable>Danger</badge-i>
+            <badge-i type="warn" radius="full" contenteditable>Warn</badge-i>
             <badge-i type="success" radius="full" contenteditable>Success</badge-i>
           </hstack-i>
           <hstack-i>
@@ -139,8 +151,12 @@
             <h2>alert Component</h2>
             <p>This is an example alert with title and content</p>
           </alert-i>
+          <alert-i level="warn" role="alert">
+            <h2>Warning!</h2>
+            <p>This is an example alert with title and content</p>
+          </alert-i>
           <alert-i level="success" role="alert">
-            <h2>Success alert</h2>
+            <h2>Great Success!</h2>
             <p>This is an example alert with title and content</p>
           </alert-i>
           <alert-i level="danger" role="alert">
@@ -175,7 +191,7 @@
         <h2>button</h2>
         <button>
           <svg viewBox="0 0 20 20" width="16" height="16">
-            <path d="m9 16.17 6-6-1.42-1.42L9 13.34l-2.83-2.83-1.42 1.42z" fill="currentColor" />
+            <path d="m9 16.17 6-6-1.42-1.42L9 13.34l-2.83-2.83-1.42 1.42z" fill="currentColor"/>
           </svg>
           Button
         </button>
@@ -185,9 +201,8 @@
         <button data-variant="outline" data-action="danger">Danger</button>
         <a href="#fake" data-as="button">Link Button</a>
         <button data-variant="text">Text button</button>
-        <br>
-        <br>
 
+        <h2>buttongroup-i</h2>
         <hstack-i>
           <buttongroup-i>
             <button>group 1</button>
@@ -202,13 +217,13 @@
 
           <buttongroup-i>
             <label>
-              Option 1 <input type="radio" name="radio-group" />
+              Option 1 <input type="radio" name="radio-group">
             </label>
             <label>
-              Option 2 <input type="radio" name="radio-group" />
+              Option 2 <input type="radio" name="radio-group">
             </label>
             <label>
-              Option 3 <input type="radio" name="radio-group" />
+              Option 3 <input type="radio" name="radio-group">
             </label>
           </buttongroup-i>
         </hstack-i>
@@ -217,7 +232,7 @@
         <div style="background-color: var(--color-bg-400);">
           <container-i data-as="card-i" variant="narrow" gap="m">
             <h3>Narrow container (as a card)</h3>
-            <input type="text" placeholder="Your Name" />
+            <input type="text" placeholder="Your Name">
             <button>Submit</button>
           </container-i>
         </div>

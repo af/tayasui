@@ -1,10 +1,10 @@
 skeleton-i {
-  background: var(--color-fg-skeleton, #bbb);
+  background: var(--color-fg-skeleton, #ddd);
   border-radius: var(--border-radius-s);
   overflow: hidden;
   position: relative;
   display: block;
-  height: var(--height, 1em);
+  height: var(--height, 1.4em);
   width: var(--width, 100%);
 }
 
@@ -46,26 +46,6 @@ skeleton-i[width="m"] {
 
 skeleton-i[width="l"] {
   width: 100%;
-}
-
-skeleton-i[height="xs"] {
-  height: 0.5em;
-}
-
-skeleton-i[height="s"] {
-  height: 0.75em;
-}
-
-skeleton-i[height="m"] {
-  height: 1em;
-}
-
-skeleton-i[height="l"] {
-  height: 1.5em;
-}
-
-skeleton-i[height="xl"] {
-  height: 2em;
 }
 
 skeleton-i[radius="none"] {

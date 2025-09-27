@@ -9,11 +9,18 @@
 */
 
 labelledfield-i {
+  --side-pad: var(--spacing-m);
+  --border: var(--color-border);
   position: relative;
   display: inline-flex;
+  /* TODO: add propert(ies) to override this */
+  flex: 1;
   flex-direction: column;
   align-self: flex-start;
-  --side-padding: var(--spacing-m);
+
+  label {
+    display: flex;
+  }
 
   small {
     position: absolute;
@@ -25,22 +32,21 @@ labelledfield-i {
     font-family: var(--font-family-micro, --font-family-text);
     font-size: var(--font-size-xs);
     font-weight: 600;
-    padding: 5px var(--side-padding) 0;
+    padding: 5px var(--side-pad) 0;
   }
 
   input,
   select,
   textarea {
     flex: 1 0 auto;
-    padding: var(--spacing-m) var(--side-padding) 0;
+    padding: var(--spacing-m) var(--side-pad) 0;
     min-height: 55px;
-    min-width: 170px;
     background: var(--color-bg-500);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--border);
     border-radius: var(--border-radius-s);
 
-    &:hover {
-      border-color: var(--color-border-hover);
+    &:not(:user-invalid):hover {
+      --border: var(--color-border-hover);
     }
   }
 
@@ -57,6 +63,18 @@ labelledfield-i {
 
   /* Support for <div role="alert"> error messages below the input */
   input:user-invalid~[role="alert"] {
-    color: var(--color-fg-danger);
+    color: var(--color-fg-warning);
   }
+
+  &:has(:user-invalid) {
+    --border: var(--color-fg-warn);
+
+    small {
+      color: var(--border);
+    }
+  }
+}
+
+:focus-visible {
+  outline-offset: 3px;
 }
