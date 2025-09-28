@@ -1,14 +1,15 @@
 import type { DetailedHTMLProps, HTMLAttributes } from 'react'
 
-type StackAttrs = {
+type BlockAttrs = {
+  gap?: 'xs' | 's' | 'm' | 'l'
+  pad?: 'none' | 'xs' | 's' | 'm' | 'l' | 'xl'
+  vpad?: 'none' | 'xs' | 's' | 'm' | 'l' | 'xl'
+}
+
+type StackAttrs = BlockAttrs & {
   align?: 'start' | 'end' | 'center' | 'baseline' | 'stretch'
   justify?: 'center' | 'start' | 'space-between' | 'space-around' | 'space-evenly' | 'flex-end'
   wrap?: 'wrap' | 'nowrap' | 'wrap-reverse'
-  gap?: 'xs' | 's' | 'm' | 'l'
-}
-
-type HStackAttrs = StackAttrs & {
-  breakpoint?: 's' | 'm'
 }
 
 // biome-ignore lint/complexity/noBannedTypes: {} is intentional here
@@ -19,14 +20,14 @@ type CustomElementProps<T = {}> = DetailedHTMLProps<HTMLAttributes<HTMLElement> 
 declare module 'react/jsx-runtime' {
   namespace JSX {
     interface IntrinsicElements {
-      'container-i': CustomElementProps<{
-        direction?: 'column' | 'row' | 'row-reverse' | 'responsive'
-        variant?: 'narrow'
-        gap?: 's' | 'm' | 'l'
-        vpad?: 's' | 'm' | 'l' | 'xl'
-      }>
+      'container-i': CustomElementProps<
+        BlockAttrs & {
+          direction?: 'column' | 'row' | 'row-reverse' | 'responsive'
+          variant?: 'narrow'
+        }
+      >
       'vstack-i': CustomElementProps<StackAttrs>
-      'hstack-i': CustomElementProps<HStackAttrs>
+      'hstack-i': CustomElementProps<StackAttrs & { breakpoint?: 's' | 'm' }>
       'zstack-i': CustomElementProps<{
         arrange?: 'fan-up' | 'fan-right'
       }>
@@ -40,11 +41,9 @@ declare module 'react/jsx-runtime' {
       }>
       'badge-i': CustomElementProps<{
         type?: 'primary' | 'danger' | 'neutral'
-        radius?: 's' | 'm' | 'full'
+        radius?: 's' | 'm' | 'full' | 'none'
       }>
-      'card-i': CustomElementProps<{
-        padding?: 's' | 'm'
-      }>
+      'card-i': CustomElementProps<BlockAttrs>
 
       'switch-i': CustomElementProps
       'labelledfield-i': CustomElementProps

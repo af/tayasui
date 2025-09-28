@@ -35,34 +35,6 @@ container-i,
   &[variant="narrow"] {
     max-width: var(--container-width-narrow, 400px);
   }
-
-  &[gap="s"] {
-    gap: var(--spacing-s);
-  }
-
-  &[gap="m"] {
-    gap: var(--spacing-m);
-  }
-
-  &[gap="l"] {
-    gap: var(--spacing-l);
-  }
-
-  &[vpad="s"] {
-    --vpad: var(--spacing-s);
-  }
-
-  &[vpad="m"] {
-    --vpad: var(--spacing-m);
-  }
-
-  &[vpad="l"] {
-    --vpad: var(--spacing-l);
-  }
-
-  &[vpad="xl"] {
-    --vpad: var(--spacing-xl);
-  }
 }
 
 @media (max-width: 767px) {

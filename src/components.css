@@ -7,6 +7,7 @@
 @import url('./LabelledField.css') layer(tayasui.components);
 @import url('./Switch.css') layer(tayasui.components);
 @import url('./Skeleton.css') layer(tayasui.components);
+@import url('./facets.css') layer(tayasui.components);
 
 /* bun bundler doesn't like having this line above the @imports */
 @layer tayasui.components {}

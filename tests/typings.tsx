@@ -6,12 +6,12 @@ const expectedUsage = <div>
     hi
   </hstack-i>
 
-  <vstack-i>
+  <vstack-i gap="s" pad="m" vpad="none">
     hello
     <skeleton-i radius="full" />
   </vstack-i>
 
-  <card-i padding="s">
+  <card-i pad="s">
     <h1>Hello</h1>
     <switch-i>
       <label><input type="checkbox" /> Checkbox</label>

@@ -17,7 +17,9 @@ card-i,
   box-shadow: var(--shadow-m);
   display: flex;
   flex-direction: column;
+  /* overridable with the gap attribute */
   gap: var(--spacing-s);
+  /* overridable with pad and vpad attributes */
   padding: var(--spacing-l);
 
   /* for <a data-as="card-i"> */
@@ -31,9 +33,5 @@ card-i,
 
   &>*:last-child {
     margin-bottom: 0;
-  }
-
-  &[padding="s"] {
-    padding: var(--spacing-s);
   }
 }

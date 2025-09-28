@@ -35,22 +35,6 @@ vstack-i,
 hstack-i,
 [data-as="hstack-i"],
 [data-as="vstack-i"] {
-  &[gap="xs"] {
-    gap: var(--spacing-xs);
-  }
-
-  &[gap="s"] {
-    gap: var(--spacing-s);
-  }
-
-  &[gap="m"] {
-    gap: var(--spacing-m);
-  }
-
-  &[gap="l"] {
-    gap: var(--spacing-l);
-  }
-
   &[align="start"] {
     align-items: flex-start;
   }

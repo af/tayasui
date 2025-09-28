@@ -58,20 +58,4 @@ skeleton-i {
   &[width="l"] {
     width: 100%;
   }
-
-  &[radius="none"] {
-    border-radius: 0;
-  }
-
-  &[radius="m"] {
-    border-radius: var(--border-radius-m);
-  }
-
-  &[radius="l"] {
-    border-radius: var(--border-radius-l);
-  }
-
-  &[radius="full"] {
-    border-radius: var(--border-radius-full);
-  }
 }

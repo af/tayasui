@@ -31,20 +31,13 @@ badge-i {
     border: 1px solid var(--color-border);
   }
 
+  &[type="warn"] {
+    color: var(--color-fg-warn);
+    background: var(--color-bg-warn);
+  }
+
   &[type="success"] {
     color: var(--color-fg-success);
     background: var(--color-bg-success);
-  }
-
-  &[radius="none"] {
-    border-radius: 0;
-  }
-
-  &[radius="s"] {
-    border-radius: var(--border-radius-s);
-  }
-
-  &[radius="full"] {
-    border-radius: var(--border-radius-full);
   }
 }
