@@ -17,6 +17,11 @@ labelledfield-i {
   flex: 1;
   flex-direction: column;
   align-self: flex-start;
+  transition: border-color 0.2s;
+
+  &:not(:has(:user-invalid)):hover {
+    --border: var(--color-border-hover);
+  }
 
   label {
     display: flex;
@@ -44,10 +49,6 @@ labelledfield-i {
     background: var(--color-bg-500);
     border: 1px solid var(--border);
     border-radius: var(--border-radius-s);
-
-    &:not(:user-invalid):hover {
-      --border: var(--color-border-hover);
-    }
   }
 
   textarea {
@@ -59,6 +60,20 @@ labelledfield-i {
     appearance: none;
     color: var(--color-fg-primary);
     cursor: pointer;
+  }
+
+  /* chevron to make the widget look like a select (since we're using appearance: none) */
+  label:has(select)::after {
+    content: "";
+    position: absolute;
+    right: var(--side-pad);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    pointer-events: none;
   }
 
   /* Support for <div role="alert"> error messages below the input */
