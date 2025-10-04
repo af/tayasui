@@ -11,6 +11,8 @@ const contentToRoute = (fname: string) => () => {
   const commentMatch = commentDocRegex.exec(content)
   const markdown = commentMatch?.[1].replace(/^\s*\*\s?/gm, '').trim()
 
+  // TODO: convert examples to side-by-side html + code
+  // see https://marked.js.org/using_pro
   return new Response(`<!DOCTYPE html><html>${markdown ? marked(markdown) : 'No comment'}</html>`, {
     headers: { 'Content-Type': 'text/html' },
   })
@@ -18,19 +20,21 @@ const contentToRoute = (fname: string) => () => {
 
 const fileTuples = fs
   .readdirSync('./src')
-  .filter((fname) => fname.endsWith('.css'))
-  .map((fname) => ['/' + fname.replace('.css', ''), contentToRoute(fname)])
-
-const routes = Object.fromEntries(fileTuples)
+  .filter((fname: string) => fname.endsWith('.css'))
+  .map((fname: string) => [`/${fname.replace('.css', '')}`, contentToRoute(fname)])
+const docRoutes = Object.fromEntries(fileTuples)
 
 const port = 3333
 
 Bun.serve({
   port,
-  development: true, // Enables hot reloading
+  development: {
+    hmr: true,
+    console: true,
+  },
   routes: {
     '/*': app,
-    ...routes,
+    ...docRoutes,
   },
 })
 

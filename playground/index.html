@@ -17,6 +17,10 @@
         padding: var(--spacing-m);
         position: sticky;
         top: 0;
+
+        a {
+          display: block;
+        }
       }
 
       main {
@@ -50,8 +54,13 @@
   <body>
     <container-i direction="responsive" gap="m">
       <nav>
-        <h1>Tayasui</h1>
-        <div>容易い</div>
+        <a href="/" style="text-decoration: none; color: inherit;">
+          <h1>Tayasui</h1>
+          <div>容易い</div>
+        </a>
+        <a href="/Switch">Switch</a>
+        <a href="/Card">Card</a>
+        <a href="/Skeleton">Skeleton</a>
       </nav>
       <main>
         <p>A dev environment for CSS custom elements</p>
@@ -238,5 +247,18 @@
         </div>
       </main>
     </container-i>
+    <script>
+    // faux pjax
+    const nav = document.querySelector('nav')
+    const main = document.querySelector('main')
+    nav.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'A') return
+      e.preventDefault()
+      history.pushState(null, null, e.target.href)
+      fetch(e.target.href).then(r => r.text()).then(html => {
+        main.innerHTML = html
+      })
+    })
+    </script>
   </body>
 </html>
