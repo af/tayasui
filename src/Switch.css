@@ -13,6 +13,10 @@
  **/
 
 switch-i {
+  --pad: 4px;
+  --h: 1.2rem;
+  --w: calc(var(--h) * 2.5);
+
   /* prevents extra margin below switch */
   display: flex;
 
@@ -21,16 +25,17 @@ switch-i {
     appearance: none;
     background: var(--color-fg-disabled);
     display: inline-block;
+    border: none;
     border-radius: var(--border-radius-full);
-    padding: 4px;
-    width: 3rem;
+    padding: var(--pad);
+    width: var(--w);
     cursor: pointer;
 
     &::before {
       content: "";
       display: block;
-      width: 1.2rem;
-      height: 1.2rem;
+      width: var(--h);
+      height: var(--h);
       border-radius: var(--border-radius-full);
       background: var(--color-bg-900, #fff);
       transition: all 0.2s ease-in-out;
@@ -40,7 +45,8 @@ switch-i {
       background: var(--color-fg-highlight);
 
       &::before {
-        transform: translateX(1.25rem);
+        /* move the pseudo element so it's --pad away from the right edge */
+        transform: translateX(calc(var(--w) - var(--h) - 2 * var(--pad)));
       }
     }
   }
