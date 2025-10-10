@@ -1,14 +1,14 @@
 /**
- * # `<skeleton-i>`
- *
- * Basic skeleton loading component. Only provides a single box; combine with layout primitives
- * to create more complex loading states.
- *
- *  ```html
- *   <skeleton-i></skeleton-i>
- *   <skeleton-i width="s"></skeleton-i>
- *   <skeleton-i radius="full"></skeleton-i>
- *   ```
+# `<skeleton-i>`
+
+Basic skeleton loading component. Only provides a single box; combine with layout primitives
+to create more complex loading states.
+
+```html
+<skeleton-i></skeleton-i>
+<skeleton-i width="s"></skeleton-i>
+<skeleton-i radius="full"></skeleton-i>
+```
  **/
 @keyframes shimmer {
   0% {

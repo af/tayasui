@@ -1,12 +1,12 @@
 /**
- * # `<card-i>`
- * example usage:
- *  ```html
- *   <card-i>
- *     <h1>Card Title</h1>
- *     <p>Card content</p>
- *   </card-i>
- *   ```
+# `<card-i>`
+example usage:
+```html
+<card-i>
+  <h1>Card Title</h1>
+  <p>Card content</p>
+</card-i>
+```
  **/
 card-i,
 [data-as="card-i"] {

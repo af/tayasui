@@ -21,6 +21,16 @@
         a {
           display: block;
         }
+
+        a[aria-current="page"] {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+
+      pre:has(code) {
+        background-color: var(--color-bg-300);
+        padding: var(--spacing-s);
       }
 
       main {
@@ -252,10 +262,15 @@
     const nav = document.querySelector('nav')
     const main = document.querySelector('main')
     nav.addEventListener('click', (e) => {
-      if (e.target.tagName !== 'A') return
+      const link = e.target
+      if (link.tagName !== 'A') return
       e.preventDefault()
+
+      link.parentElement.querySelectorAll('a[aria-current]').forEach(a => a.removeAttribute('aria-current'))
+      link.setAttribute('aria-current', 'page')
+
       history.pushState(null, null, e.target.href)
-      fetch(e.target.href).then(r => r.text()).then(html => {
+      fetch(link.href).then(r => r.text()).then(html => {
         main.innerHTML = html
       })
     })
