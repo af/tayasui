@@ -1,44 +1,53 @@
-/* usage (child must be a checkbox):
-*   <switch-i>
-*     <input type="checkbox" name="someField" id="test" />
-*   </switch-i>
-*   <label htmlFor="test">Test</label>
-*/
+/**
+# `<switch-i>`
+
+A toggle that can be used to turn something on or off. This wraps a checkbox which stores the
+state of the toggle.
+
+```html
+<switch-i>
+ <input type="checkbox" name="someField" id="test" />
+</switch-i>
+<label htmlFor="test">My cool field</label>
+```
+**/
 
 switch-i {
-  /* prevent extra margin below switch */
+  --pad: 4px;
+  --h: 1.2rem;
+  --w: calc(var(--h) * 2.5);
+
+  /* prevents extra margin below switch */
   display: flex;
-}
 
-/* todo: parameterize with colors and clean up rem values */
-switch-i input[type="checkbox"] {
-  appearance: none;
-  background: var(--color-fg-disabled);
-  display: inline-block;
-  border-radius: var(--border-radius-full);
-  padding: 4px;
-  width: 3rem;
-  cursor: pointer;
+  /* todo: clean up spacing values */
+  input[type="checkbox"] {
+    appearance: none;
+    background: var(--color-fg-disabled);
+    display: inline-block;
+    border: none;
+    border-radius: var(--border-radius-full);
+    padding: var(--pad);
+    width: var(--w);
+    cursor: pointer;
 
-  /* input[type="checkbox"] { */
-  /*   display: none; */
-  /* } */
-}
+    &::before {
+      content: "";
+      display: block;
+      width: var(--h);
+      height: var(--h);
+      border-radius: var(--border-radius-full);
+      background: var(--color-bg-900, #fff);
+      transition: all 0.2s ease-in-out;
+    }
 
-switch-i input[type="checkbox"]::before {
-  content: "";
-  display: block;
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: var(--border-radius-full);
-  background: var(--color-bg-900, #fff);
-  transition: all 0.2s ease-in-out;
-}
+    &:checked {
+      background: var(--color-fg-highlight);
 
-switch-i input:checked {
-  background: var(--color-fg-highlight);
-
-  &::before {
-    transform: translateX(1.25rem);
+      &::before {
+        /* move the pseudo element so it's --pad away from the right edge */
+        transform: translateX(calc(var(--w) - var(--h) - 2 * var(--pad)));
+      }
+    }
   }
 }

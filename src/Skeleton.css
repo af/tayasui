@@ -1,28 +1,16 @@
-skeleton-i {
-  background: var(--color-fg-skeleton, #ddd);
-  border-radius: var(--border-radius-s);
-  overflow: hidden;
-  position: relative;
-  display: block;
-  height: var(--height, 1.4em);
-  width: var(--width, 100%);
-}
+/**
+# `<skeleton-i>`
 
-skeleton-i::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg,
-      transparent,
-      var(--color-fg-skeleton-shimmer, rgba(255, 255, 255, 0.4)),
-      transparent);
-  animation: skeleton-shimmer 2s infinite;
-}
+Basic skeleton loading component. Only provides a single box; combine with layout primitives
+to create more complex loading states.
 
-@keyframes skeleton-shimmer {
+```html
+<skeleton-i></skeleton-i>
+<skeleton-i width="s"></skeleton-i>
+<skeleton-i radius="full"></skeleton-i>
+```
+ **/
+@keyframes shimmer {
   0% {
     left: -100%;
   }
@@ -32,34 +20,58 @@ skeleton-i::after {
   }
 }
 
-skeleton-i[width="xs"] {
-  width: 25%;
-}
+skeleton-i {
+  background: var(--color-fg-skeleton, #ddd);
+  border-radius: var(--border-radius-s);
+  overflow: hidden;
+  position: relative;
+  display: block;
+  height: var(--height, 1.4em);
+  width: var(--width, 100%);
 
-skeleton-i[width="s"] {
-  width: 50%;
-}
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+        transparent,
+        var(--color-fg-skeleton-shimmer, rgba(255, 255, 255, 0.4)),
+        transparent);
+    animation: shimmer 2s infinite;
+  }
 
-skeleton-i[width="m"] {
-  width: 75%;
-}
+  &[width="xs"] {
+    width: 25%;
+  }
 
-skeleton-i[width="l"] {
-  width: 100%;
-}
+  &[width="s"] {
+    width: 50%;
+  }
 
-skeleton-i[radius="none"] {
-  border-radius: 0;
-}
+  &[width="m"] {
+    width: 75%;
+  }
 
-skeleton-i[radius="m"] {
-  border-radius: var(--border-radius-m);
-}
+  &[width="l"] {
+    width: 100%;
+  }
 
-skeleton-i[radius="l"] {
-  border-radius: var(--border-radius-l);
-}
+  &[radius="none"] {
+    border-radius: 0;
+  }
 
-skeleton-i[radius="full"] {
-  border-radius: var(--border-radius-full);
+  &[radius="m"] {
+    border-radius: var(--border-radius-m);
+  }
+
+  &[radius="l"] {
+    border-radius: var(--border-radius-l);
+  }
+
+  &[radius="full"] {
+    border-radius: var(--border-radius-full);
+  }
 }

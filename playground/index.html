@@ -17,6 +17,20 @@
         padding: var(--spacing-m);
         position: sticky;
         top: 0;
+
+        a {
+          display: block;
+        }
+
+        a[aria-current="page"] {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+
+      pre:has(code) {
+        background-color: var(--color-bg-300);
+        padding: var(--spacing-s);
       }
 
       main {
@@ -50,8 +64,13 @@
   <body>
     <container-i direction="responsive" gap="m">
       <nav>
-        <h1>Tayasui</h1>
-        <div>容易い</div>
+        <a href="/" style="text-decoration: none; color: inherit;">
+          <h1>Tayasui</h1>
+          <div>容易い</div>
+        </a>
+        <a href="/Switch">Switch</a>
+        <a href="/Card">Card</a>
+        <a href="/Skeleton">Skeleton</a>
       </nav>
       <main>
         <p>A dev environment for CSS custom elements</p>
@@ -238,5 +257,23 @@
         </div>
       </main>
     </container-i>
+    <script>
+    // faux pjax
+    const nav = document.querySelector('nav')
+    const main = document.querySelector('main')
+    nav.addEventListener('click', (e) => {
+      const link = e.target
+      if (link.tagName !== 'A') return
+      e.preventDefault()
+
+      link.parentElement.querySelectorAll('a[aria-current]').forEach(a => a.removeAttribute('aria-current'))
+      link.setAttribute('aria-current', 'page')
+
+      history.pushState(null, null, e.target.href)
+      fetch(link.href).then(r => r.text()).then(html => {
+        main.innerHTML = html
+      })
+    })
+    </script>
   </body>
 </html>
