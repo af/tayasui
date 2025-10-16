@@ -1,3 +1,21 @@
+/**
+# `<hstack-i>` and `<vstack-i>`
+
+```html
+<hstack-i>
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
+</hstack-i>
+
+<vstack-i>
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
+</vstack-i>
+```
+**/
+
 :root {
   --sp-xs: 0.25rem;
   --sp-s: 0.5rem;

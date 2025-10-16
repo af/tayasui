@@ -32,8 +32,7 @@ declare module 'react/jsx-runtime' {
       }>
 
       'alert-i': CustomElementProps<{
-        variant?: 'callout'
-        level?: 'success' | 'danger'
+        level?: 'success' | 'warn' | 'danger'
       }>
       'skeleton-i': CustomElementProps<{
         width?: 's' | 'm' | 'l' | 'xl'

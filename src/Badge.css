@@ -1,3 +1,12 @@
+/**
+# `<badge-i>`
+
+```html
+<badge-i type="success">Success</badge-i>
+<badge-i type="danger">Danger</badge-i>
+<badge-i type="neutral">Neutral</badge-i>
+```
+**/
 badge-i {
   align-items: center;
   background: var(--color-bg-highlight);

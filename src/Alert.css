@@ -1,3 +1,23 @@
+/**
+# `<alert-i>`
+
+```html
+<alert-i level="success">
+  <h2>Success</h2>
+  <p>This is a success alert</p>
+</alert-i>
+
+<alert-i level="warn">
+  <h2>Warning</h2>
+  <p>This is a warning alert</p>
+</alert-i>
+
+<alert-i level="danger">
+  <h2>Danger</h2>
+  <p>This is a danger alert</p>
+</alert-i>
+```
+**/
 alert-i {
   --color: var(--color-fg-highlight);
   --bg: var(--color-bg-highlight);
@@ -36,24 +56,5 @@ alert-i {
   &[level="danger"] {
     --color: var(--color-fg-danger);
     --bg: var(--color-bg-danger);
-  }
-
-  &[variant="callout"] {
-    background: none;
-    border: none;
-    border-radius: 0;
-    border-left: 4px solid var(--color);
-    color: inherit;
-    padding: var(--sp-xs) var(--padding);
-
-    /* would use :heading, but not supported by most browsers yet */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: var(--color);
-    }
   }
 }
