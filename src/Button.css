@@ -37,6 +37,10 @@
       color: var(--color-fg-cta);
     }
 
+    &:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+
     &[data-variant="outline"] {
       color: var(--color);
       background-color: transparent;
