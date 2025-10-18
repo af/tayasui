@@ -39,9 +39,9 @@ labelledfield-i {
   --border: var(--color-border);
   position: relative;
   display: inline-flex;
-  /* TODO: add propert(ies) to override this */
   flex: 1;
   flex-direction: column;
+  line-height: 1.8;
   align-self: flex-start;
   transition: border-color 0.2s;
 
@@ -63,7 +63,7 @@ labelledfield-i {
     font-family: var(--font-family-micro, --font-family-text);
     font-size: var(--font-size-xs);
     font-weight: 600;
-    padding: 2px var(--side-pad) 0;
+    padding: var(--spacing-xxs) var(--side-pad) 0;
   }
 
   input,
@@ -101,15 +101,15 @@ labelledfield-i {
     pointer-events: none;
   }
 
-  /* Support for <div role="alert"> error messages below the input */
-  input:user-invalid~[role="alert"] {
-    color: var(--color-fg-warning);
-  }
-
   &:has(:user-invalid) {
-    --border: var(--color-fg-warn);
+    --border: var(--color-fg-danger);
 
-    span {
+    span:first-child {
+      color: var(--border);
+    }
+
+    /* Support for <div role="alert"> error messages inside the labelledfield-i wrapper */
+    [role="alert"] {
       color: var(--border);
     }
   }
