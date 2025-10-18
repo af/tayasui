@@ -25,9 +25,19 @@
   input,
   textarea,
   select {
+    accent-color: var(--color-fg-highlight);
     background: none;
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-s);
     padding: var(--spacing-xs) var(--spacing-s);
+
+    &[type="range"] {
+      padding: 0;
+    }
+  }
+
+  /* Improve usability a bit by making input labels visibly clickable */
+  label:has(input) {
+    cursor: pointer;
   }
 }

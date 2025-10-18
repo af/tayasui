@@ -13,7 +13,7 @@ state of the toggle.
 **/
 
 switch-i {
-  --pad: 4px;
+  --pad: var(--spacing-xxs);
   --h: 1rem;
   --w: calc(var(--h) * 2.5);
 
