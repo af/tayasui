@@ -48,17 +48,13 @@
 
   --shadow-m: 0 3px 8px rgba(0, 0, 0, 0.06);
 
-  /* Stack Spacing (sp prefix) */
-  --sp-xs: 0.25rem;
-  --sp-s: 0.5rem;
-  --sp-m: 1rem;
-  --sp-l: 2rem;
-
   /* Spacing (TODO: consolidate with the above) */
+  --spacing-xxs: 2px;
   --spacing-xs: 4px;
   --spacing-s: 8px;
   --spacing-m: 16px;
   --spacing-l: 24px;
+  --spacing-xl: 32px;
 
 
   --font-family-text: Palatino, serif;

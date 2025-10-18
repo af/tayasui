@@ -18,13 +18,13 @@
     --borderWidth: 1px;
 
     display: inline-flex;
-    gap: var(--sp-xs);
+    gap: var(--spacing-xs);
     align-items: center;
     justify-content: center;
     background-color: var(--color);
     color: var(--color-fg-cta);
     font-family: inherit;
-    padding: var(--sp-xs) var(--sp-m);
+    padding: var(--spacing-xs) var(--spacing-m);
     border: var(--borderWidth) solid var(--color);
     /* ensure equivalent height to outline buttons */
     border-radius: var(--radius);
@@ -124,7 +124,7 @@
       --radius: var(--border-radius-m);
       border: 1px solid var(--color-border);
       cursor: pointer;
-      padding: var(--sp-xs) var(--sp-m);
+      padding: var(--spacing-xs) var(--spacing-m);
 
       &:has(input[type="radio"]:checked) {
         color: var(--color-fg-cta);

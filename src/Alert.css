@@ -21,8 +21,8 @@
 alert-i {
   --color: var(--color-fg-highlight);
   --bg: var(--color-bg-highlight);
-  --padding: var(--sp-m);
-  --gap: var(--sp-xs);
+  --padding: var(--spacing-m);
+  --gap: var(--spacing-xs);
 
   background-color: var(--bg);
   border: 0.5px solid currentColor;

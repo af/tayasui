@@ -16,18 +16,11 @@
 ```
 **/
 
-:root {
-  --sp-xs: 0.25rem;
-  --sp-s: 0.5rem;
-  --sp-m: 1rem;
-  --sp-l: 2rem;
-}
-
 vstack-i,
 [data-as="vstack-i"] {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-s);
+  gap: var(--spacing-s);
 }
 
 hstack-i,
@@ -35,7 +28,7 @@ hstack-i,
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--sp-s);
+  gap: var(--spacing-s);
 }
 
 vstack-i,
@@ -43,19 +36,19 @@ hstack-i,
 [data-as="hstack-i"],
 [data-as="vstack-i"] {
   &[gap="xs"] {
-    gap: var(--sp-xs);
+    gap: var(--spacing-xs);
   }
 
   &[gap="s"] {
-    gap: var(--sp-s);
+    gap: var(--spacing-s);
   }
 
   &[gap="m"] {
-    gap: var(--sp-m);
+    gap: var(--spacing-m);
   }
 
   &[gap="l"] {
-    gap: var(--sp-l);
+    gap: var(--spacing-l);
   }
 
   &[align="start"] {
