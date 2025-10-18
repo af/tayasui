@@ -96,8 +96,8 @@ labelledfield-i {
     transform: translateY(-50%) rotate(45deg);
     width: 6px;
     height: 6px;
-    border-right: 2px solid var(--border);
-    border-bottom: 2px solid var(--border);
+    border-right: 2px solid var(--color-fg-secondary);
+    border-bottom: 2px solid var(--color-fg-secondary);
     pointer-events: none;
   }
 
