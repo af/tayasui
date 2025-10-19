@@ -16,6 +16,8 @@ switch-i {
   --pad: var(--spacing-xxs);
   --h: 1rem;
   --w: calc(var(--h) * 2.5);
+  --border: none;
+  --radius: var(--border-radius-full);
 
   /* prevents extra margin below switch */
   display: flex;
@@ -25,11 +27,14 @@ switch-i {
     appearance: none;
     background: var(--color-fg-disabled);
     display: inline-block;
-    border: none;
-    border-radius: var(--border-radius-full);
+    border: var(--border);
+    border-radius: var(--radius);
     padding: var(--pad);
     width: var(--w);
-    cursor: pointer;
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
 
     &::before {
       content: "";

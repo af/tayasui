@@ -41,8 +41,7 @@ labelledfield-i {
   display: inline-flex;
   flex: 1;
   flex-direction: column;
-  line-height: 1.8;
-  align-self: flex-start;
+  line-height: 2;
   transition: border-color 0.2s;
 
   &:not(:has(:user-invalid)):hover {
@@ -71,7 +70,6 @@ labelledfield-i {
   textarea {
     flex: 1 0 auto;
     padding: var(--spacing-m) var(--side-pad) 0;
-    background: var(--color-bg-500);
     border: 1px solid var(--border);
     border-radius: var(--border-radius-s);
   }
