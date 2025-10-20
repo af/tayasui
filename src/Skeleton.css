@@ -21,7 +21,8 @@ to create more complex loading states.
 }
 
 skeleton-i {
-  background: var(--color-fg-skeleton, #ddd);
+  --shimmer: rgba(255, 255, 255, 0.3);
+  background: var(--color-fg-skeleton, #eaeaea);
   border-radius: var(--border-radius-s);
   overflow: hidden;
   position: relative;
@@ -38,7 +39,7 @@ skeleton-i {
     height: 100%;
     background: linear-gradient(135deg,
         transparent,
-        var(--color-fg-skeleton-shimmer, rgba(255, 255, 255, 0.4)),
+        var(--shimmer),
         transparent);
     animation: shimmer 2s infinite;
   }
