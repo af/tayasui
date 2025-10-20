@@ -15,6 +15,10 @@
     html {
       interpolate-size: allow-keywords;
     }
+
+    body {
+      scroll-behavior: smooth;
+    }
   }
 
   body {

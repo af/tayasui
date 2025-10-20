@@ -9,6 +9,8 @@
   }
 
   body {
+    display: flex;
+    flex-direction: column;
     min-height: 100dvh;
   }
 
@@ -34,6 +36,11 @@
     &[type="range"] {
       padding: 0;
     }
+  }
+
+  /* auto-grow textareas by default. Use with min-width/width and max-height to constrain to surroundings */
+  textarea {
+    field-sizing: content;
   }
 
   /* Improve usability a bit by making input labels visibly clickable */
