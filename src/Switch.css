@@ -42,7 +42,7 @@ switch-i {
       width: var(--h);
       height: var(--h);
       border-radius: var(--border-radius-full);
-      background: var(--color-bg-900, #fff);
+      background: var(--color-bg-primary, #fff);
       transition: all 0.2s ease-out;
     }
 

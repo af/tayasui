@@ -30,7 +30,7 @@ nav {
 }
 
 pre:has(code) {
-  background-color: var(--color-bg-0);
+  background-color: var(--color-bg-ground);
   padding: var(--spacing-s);
   margin-bottom: var(--spacing-l);
 }
@@ -40,7 +40,7 @@ code {
 }
 
 main {
-  background-color: var(--color-bg-400);
+  background-color: var(--color-bg-primary);
   border-radius: var(--border-radius-m);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* FIXME: update this */
