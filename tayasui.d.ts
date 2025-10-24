@@ -40,7 +40,7 @@ declare module 'react/jsx-runtime' {
         radius?: 's' | 'm' | 'full' | 'none'
       }>
       'badge-i': CustomElementProps<{
-        type?: 'primary' | 'danger' | 'neutral'
+        type?: 'primary' | 'neutral' | 'danger' | 'warn' | 'success'
         radius?: 's' | 'm' | 'full' | 'none'
       }>
       'card-i': CustomElementProps<BlockAttrs>

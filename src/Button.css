@@ -24,7 +24,8 @@
     background-color: var(--color);
     color: var(--color-fg-cta);
     font-family: inherit;
-    padding: var(--spacing-xs) var(--spacing-m);
+    line-height: 1.7;
+    padding: var(--spacing-xxs) var(--spacing-m);
     border: var(--borderWidth) solid var(--color);
     /* ensure equivalent height to outline buttons */
     border-radius: var(--radius);
@@ -44,6 +45,10 @@
     &[data-variant="outline"] {
       color: var(--color);
       background-color: transparent;
+
+      &[aria-busy="true"]::before {
+        color: var(--color);
+      }
     }
 
     &[data-variant="text"] {
@@ -56,6 +61,11 @@
 
     &[data-action="danger"] {
       --color: var(--color-fg-danger);
+    }
+
+    &[data-size="s"] {
+      font-size: var(--font-size-s);
+      padding: 0 var(--spacing-s);
     }
 
     &:disabled,

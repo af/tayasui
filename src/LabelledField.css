@@ -35,13 +35,13 @@ A labelled field component. Opinionated wrapper around a `<label>` and `<input>`
 **/
 
 labelledfield-i {
-  --side-pad: var(--spacing-m);
   --border: var(--color-border);
+  --label-size: var(--font-size-xs);
+  --side-pad: var(--label-size);
   position: relative;
   display: inline-flex;
   flex: 1;
   flex-direction: column;
-  line-height: 2;
   transition: border-color 0.2s;
 
   &:not(:has(:user-invalid)):hover {
@@ -60,16 +60,17 @@ labelledfield-i {
     color: var(--color-fg-secondary);
     display: block;
     font-family: var(--font-family-micro, --font-family-text);
-    font-size: var(--font-size-xs);
+    font-size: var(--label-size);
     font-weight: 600;
-    padding: var(--spacing-xxs) var(--side-pad) 0;
+    line-height: 2;
+    padding-left: var(--side-pad);
   }
 
   input,
   select,
   textarea {
     flex: 1 0 auto;
-    padding: var(--spacing-m) var(--side-pad) 0;
+    padding: calc(1.4 * var(--label-size)) var(--side-pad) var(--spacing-xxs);
     border: 1px solid var(--border);
     border-radius: var(--border-radius-s);
   }
