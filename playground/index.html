@@ -1,33 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="basic">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tayasui Playground</title>
     <link rel="stylesheet" href="./themes/basic.css">
+    <link rel="stylesheet" href="./themes/hpn.css">
     <link rel="stylesheet" href="/src/all.css">
     <link rel="stylesheet" href="./playground.css">
   </head>
   <body>
-    <container-i direction="responsive" gap="m">
-      <nav>
+    <container-i direction="responsive">
+      <nav data-as="vstack-i" gap="m">
         <a href="/" style="text-decoration: none; color: inherit;">
           <h1>Tayasui</h1>
           <div>容易い</div>
         </a>
+        <div>
         <h2>Layout</h2>
         <a href="/Container">Container</a>
         <a href="/Stack">HStack & VStack</a>
         <a href="/Card">Card</a>
+          </div>
 
+          <div>
         <h2>Forms</h2>
         <a href="/Switch">Switch</a>
         <a href="/LabelledField">LabelledField</a>
+          </div>
 
+          <div>
         <h2>Misc</h2>
         <a href="/Alert">Alert</a>
         <a href="/Badge">Badge</a>
         <a href="/Skeleton">Skeleton</a>
+        </div>
+
+        <labelledfield-i>
+          <label>
+            <span>Theme</span>
+            <select name="theme" id="theme">
+              <option value="basic">Basic</option>
+              <option value="hpn">HPN</option>
+            </select>
+          </label>
+        </labelledfield-i>
       </nav>
       <main>
         <p>A dev environment for CSS custom elements</p>

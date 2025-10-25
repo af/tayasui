@@ -1,17 +1,17 @@
 @layer tayasui.reset, tayasui.base, tayasui.components, app;
 
-:root {
+:root[data-theme="basic"] {
   /* Colors - Background */
   --color-bg-ground: #f0f2f5;
   --color-bg-primary: #fafafa;
 
   /* Colors - Text */
   --color-fg-primary: #333333;
-  --color-fg-secondary: #777;
-  --color-fg-tertiary: #999;
+  --color-fg-secondary: #779;
+  --color-fg-tertiary: #99a;
   --color-fg-disabled: #aaa;
 
-  --color-bg-cta: #549ceb;
+  --color-bg-cta: #4492e7;
   --color-bg-cta-hover: #58a8ff;
   --color-fg-cta: #fff;
   --color-fg-link: #58a8ff;
@@ -52,7 +52,6 @@
   --spacing-m: 16px;
   --spacing-l: 24px;
   --spacing-xl: 32px;
-
 
   --font-family-text: Palatino, serif;
   --font-family-display: Palatino, serif;

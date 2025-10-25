@@ -5,6 +5,7 @@ body {
 
 nav {
   height: fit-content;
+  min-width: 200px;
   padding: var(--spacing-l);
   position: sticky;
   top: 0;
@@ -15,7 +16,6 @@ nav {
     text-transform: uppercase;
     font-weight: bold;
     font-family: var(--font-family-micro, --font-family-text);
-    margin: 1rem 0 0.2rem;
   }
 
   a {

@@ -27,7 +27,7 @@
   input,
   textarea,
   select {
-    accent-color: var(--color-fg-highlight);
+    accent-color: var(--color-bg-cta);
     background: none;
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-s);
@@ -35,6 +35,10 @@
 
     &[type="range"] {
       padding: 0;
+    }
+
+    &::placeholder {
+      color: var(--color-fg-tertiary);
     }
   }
 
