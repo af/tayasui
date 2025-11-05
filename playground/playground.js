@@ -11,9 +11,7 @@ nav.addEventListener('click', (e) => {
   if (link.tagName !== 'A') return
   e.preventDefault()
 
-  link.parentElement
-    .querySelectorAll('a[aria-current]')
-    .forEach((a) => a.removeAttribute('aria-current'))
+  nav.querySelectorAll('a[aria-current]').forEach((a) => a.removeAttribute('aria-current'))
   link.setAttribute('aria-current', 'page')
 
   history.pushState(null, null, e.target.href)
