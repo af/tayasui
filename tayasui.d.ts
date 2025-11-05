@@ -44,6 +44,7 @@ declare module 'react/jsx-runtime' {
         radius?: 's' | 'm' | 'full' | 'none'
       }>
       'card-i': CustomElementProps<BlockAttrs>
+      'card-cover-i': CustomElementProps
 
       'switch-i': CustomElementProps
       'labelledfield-i': CustomElementProps
