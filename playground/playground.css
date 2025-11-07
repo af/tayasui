@@ -66,3 +66,27 @@ main>h2 {
     color: var(--color-fg-tertiary);
   }
 }
+
+demo-block {
+  background: var(--color-fg-tertiary);
+  color: var(--color-bg-primary);
+  padding: 1rem;
+  border-radius: var(--border-radius-m);
+  font-weight: bold;
+
+  &:nth-child(1)::before {
+    content: "A";
+  }
+
+  &:nth-child(2)::before {
+    content: "B";
+  }
+
+  &:nth-child(3)::before {
+    content: "C";
+  }
+
+  &:nth-child(4)::before {
+    content: "D";
+  }
+}
