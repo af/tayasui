@@ -36,11 +36,14 @@ skeleton-i {
     top: 0;
     left: -100%;
     width: 100%;
+    min-width: 200px;
     height: 100%;
     background: linear-gradient(135deg,
-        transparent,
-        var(--shimmer),
-        transparent);
+        transparent 0,
+        transparent 20%,
+        var(--shimmer) 50%,
+        transparent 80%,
+        transparent 100%);
     animation: shimmer 2s infinite;
   }
 
