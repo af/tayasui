@@ -82,7 +82,7 @@
     &[aria-busy="true"]::before {
       /* TODO: center this in the button when it's visible */
       /* tricky because we're already using transform for the animation */
-      content: '';
+      content: "";
       width: 1em;
       height: 1em;
       color: var(--color-fg-cta);
