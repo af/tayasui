@@ -2,9 +2,16 @@
 const nav = document.querySelector('nav')
 const main = document.querySelector('main')
 
-document.querySelector('[name=theme]')?.addEventListener('change', (evt) => {
-  document.documentElement.setAttribute('data-theme', evt.target.value)
-})
+// localStorage-based theme switcher
+const theme = localStorage.getItem('theme')
+const setTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme)
+  localStorage.setItem('theme', theme)
+}
+if (theme) setTheme(theme)
+document
+  .querySelector('[name=theme]')
+  ?.addEventListener('change', (evt) => setTheme(evt.target.value))
 
 nav.addEventListener('click', (e) => {
   const link = e.target
