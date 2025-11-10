@@ -1,18 +1,28 @@
 /**
 # `<alert-i>`
 
+General purprose alert banner.
+
 ```html
-<alert-i level="success">
+<alert-i role="alert">
+  <h2>Did you know?</h2>
+  <p>This is a generic alert</p>
+</alert-i>
+```
+```html
+<alert-i role="alert" level="success">
   <h2>Success</h2>
   <p>This is a success alert</p>
 </alert-i>
-
-<alert-i level="warn">
+```
+```html
+<alert-i role="alert" level="warn">
   <h2>Warning</h2>
   <p>This is a warning alert</p>
 </alert-i>
-
-<alert-i level="danger">
+```
+```html
+<alert-i role="alert" level="danger">
   <h2>Danger</h2>
   <p>This is a danger alert</p>
 </alert-i>

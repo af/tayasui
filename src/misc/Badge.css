@@ -2,9 +2,20 @@
 # `<badge-i>`
 
 ```html
-<badge-i type="success">Success</badge-i>
-<badge-i type="danger">Danger</badge-i>
-<badge-i type="neutral">Neutral</badge-i>
+<hstack-i>
+  <badge-i>Primary</badge-i>
+  <badge-i type="neutral">Neutral</badge-i>
+  <badge-i type="danger" radius="full">Danger</badge-i>
+  <badge-i type="warn" radius="full">Warn</badge-i>
+  <badge-i type="success" radius="full">Success</badge-i>
+</hstack-i>
+```
+```html
+<hstack-i>
+  <badge-i type="neutral" contenteditable>Default</badge-i>
+  <badge-i type="neutral" radius="none" contenteditable>No radius</badge-i>
+  <badge-i type="neutral" radius="full" contenteditable>Full radius</badge-i>
+</hstack-i>
 ```
 **/
 badge-i {

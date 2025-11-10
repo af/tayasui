@@ -1,3 +1,65 @@
+/**
+Here's an element you already know and love: the humble button.
+
+https://css-tricks.com/explaining-the-accessible-benefits-of-using-semantic-html-elements/
+
+```html
+<button>Default</button>
+<button data-variant="outline">Outline</button>
+<button data-variant="outline" data-action="danger">Danger</button>
+<a href="#fake" data-as="button">Link Button</a>
+<button data-variant="text">Text button</button>
+```
+
+Loading and disabled states, using standard attributes:
+```html
+<hstack-i>
+<button disabled aria-busy="true">Loading</button>
+<button disabled>Disabled</button>
+</hstack-i>
+```
+
+Small buttons:
+```html
+<hstack-i gap="s" vpad="s">
+  <button data-size="s">Smol</button>
+  <button data-size="s" data-variant="outline">Smol2</button>
+  <button data-size="s" data-variant="outline" disabled aria-busy="true">Smol</button>
+  <button data-size="s" data-variant="outline" data-action="danger">smol danger</button>
+</hstack-i>
+```
+
+## ButtonGroup
+```html
+<buttongroup-i>
+  <button>group 1</button>
+  <button>group 2</button>
+</buttongroup-i>
+```
+
+```html
+<buttongroup-i>
+  <button data-variant="outline">group 1</button>
+  <button data-variant="outline">group 2</button>
+  <button data-variant="outline">group 3</button>
+</buttongroup-i>
+```
+
+Buttongroup can also be used to wrap radio buttons:
+```html
+<buttongroup-i>
+  <label>
+    Option 1 <input type="radio" name="radio-group" checked>
+  </label>
+  <label>
+    Option 2 <input type="radio" name="radio-group">
+  </label>
+  <label>
+    Option 3 <input type="radio" name="radio-group">
+  </label>
+</buttongroup-i>
+```
+**/
 @layer tayasui.base {
   @keyframes spin {
     from {

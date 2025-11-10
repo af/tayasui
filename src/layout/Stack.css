@@ -3,15 +3,17 @@
 
 ```html
 <hstack-i>
-  <button>Button 1</button>
-  <button>Button 2</button>
-  <button>Button 3</button>
+  <demo-block></demo-block>
+  <demo-block></demo-block>
+  <demo-block></demo-block>
 </hstack-i>
+```
 
+```html
 <vstack-i>
-  <button>Button 1</button>
-  <button>Button 2</button>
-  <button>Button 3</button>
+  <demo-block></demo-block>
+  <demo-block></demo-block>
+  <demo-block></demo-block>
 </vstack-i>
 ```
 **/

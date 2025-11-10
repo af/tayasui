@@ -1,6 +1,7 @@
 node_modules/
 dist/
 nursery/
+playground/data.js
 
 .DS_Store
 TODO.md

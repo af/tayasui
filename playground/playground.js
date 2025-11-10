@@ -1,4 +1,3 @@
-// faux pjax
 const nav = document.querySelector('nav')
 const main = document.querySelector('main')
 
@@ -13,18 +12,31 @@ document
   .querySelector('[name=theme]')
   ?.addEventListener('change', (evt) => setTheme(evt.target.value))
 
+const navigateTo = (hash) => {
+  const page = window.DOCS.find((p) => p.name === hash)
+  if (page) {
+    location.hash = hash
+    main.innerHTML = page.markdown
+  }
+
+  // Update nav links
+  nav.querySelectorAll('a[aria-current]').forEach((a) => a.removeAttribute('aria-current'))
+  document.querySelector(`a[href="#${hash}"]`)?.setAttribute('aria-current', 'page')
+}
 nav.addEventListener('click', (e) => {
   const link = e.target
   if (link.tagName !== 'A') return
   e.preventDefault()
 
-  nav.querySelectorAll('a[aria-current]').forEach((a) => a.removeAttribute('aria-current'))
-  link.setAttribute('aria-current', 'page')
+  const linkHash = new URL(link.href).hash?.replace('#', '')
+  navigateTo(linkHash)
+})
 
-  history.pushState(null, null, e.target.href)
-  fetch(link.href)
-    .then((r) => r.text())
-    .then((html) => {
-      main.innerHTML = html
-    })
+window.addEventListener('hashchange', () => {
+  const hash = location.hash.replace('#', '')
+  navigateTo(hash)
+})
+window.addEventListener('load', () => {
+  const hash = location.hash.replace('#', '')
+  navigateTo(hash)
 })

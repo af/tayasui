@@ -4,10 +4,10 @@
 A container component. Provides a responsive container with a max-width and centered content.
 
 ```html
-   <container-i>
-     <h1>Page Title</h1>
-     <p>Content within a centered container</p>
-   </container-i>
+<container-i>
+  <h1>Page Title</h1>
+  <p>Content within a centered container</p>
+</container-i>
 ```
 **/
 container-i,

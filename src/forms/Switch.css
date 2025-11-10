@@ -5,10 +5,21 @@ A toggle that can be used to turn something on or off. This wraps a checkbox whi
 state of the toggle.
 
 ```html
-<switch-i>
- <input type="checkbox" name="someField" id="test" />
-</switch-i>
-<label htmlFor="test">My cool field</label>
+<label data-as="hstack-i">
+  <switch-i>
+   <input type="checkbox" name="someField" id="test" />
+  </switch-i>
+  My cool switch
+</label>
+```
+
+```html
+<label data-as="hstack-i">
+  <switch-i>
+   <input disabled type="checkbox" name="someField" id="test" />
+  </switch-i>
+  A disabled switch
+</label>
 ```
 **/
 

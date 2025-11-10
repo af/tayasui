@@ -1,7 +1,7 @@
 /**
 # `<labelledfield-i>`
 
-A labelled field component. Opinionated wrapper around a `<label>` and `<input>`/`<select>`/`<textarea>`.
+An opinionated wrapper around a `<label>` and `<input>`/`<select>`/`<textarea>`.
 
 ```html
 <labelledfield-i>
@@ -37,7 +37,9 @@ A labelled field component. Opinionated wrapper around a `<label>` and `<input>`
 labelledfield-i {
   --border: var(--color-border);
   --label-size: var(--font-size-xs);
+  --label-weight: normal;
   --side-pad: var(--label-size);
+  --chevron-size: 6px;
   position: relative;
   display: inline-flex;
   flex: 1;
@@ -61,7 +63,7 @@ labelledfield-i {
     display: block;
     font-family: var(--font-family-micro, --font-family-text);
     font-size: var(--label-size);
-    font-weight: 600;
+    font-weight: var(--label-weight);
     line-height: 2;
     padding-left: var(--side-pad);
   }
@@ -84,6 +86,7 @@ labelledfield-i {
     appearance: none;
     color: var(--color-fg-primary);
     cursor: pointer;
+    padding-right: calc(var(--side-pad) * 2 + var(--chevron-size));
   }
 
   /* chevron to make the widget look like a select (since we're using appearance: none) */
@@ -93,8 +96,8 @@ labelledfield-i {
     right: var(--side-pad);
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
-    width: 6px;
-    height: 6px;
+    width: var(--chevron-size);
+    height: var(--chevron-size);
     border-right: 2px solid var(--color-fg-secondary);
     border-bottom: 2px solid var(--color-fg-secondary);
     pointer-events: none;
@@ -112,8 +115,4 @@ labelledfield-i {
       color: var(--border);
     }
   }
-}
-
-:focus-visible {
-  outline-offset: 3px;
 }
