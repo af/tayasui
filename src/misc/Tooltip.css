@@ -1,0 +1,119 @@
+/**
+# `<tooltip-i>`
+
+A pure CSS tooltip component using the popover API and anchor positioning. Wrap any element to add a tooltip on hover.
+
+## Basic usage
+
+```html
+<span id="example-anchor">Hover over me</span>
+<tooltip-i anchor="example-anchor">This is a tooltip</tooltip-i>
+```
+
+## With different placements
+
+```html
+<span id="top-anchor">Hover for top tooltip</span>
+<tooltip-i anchor="top-anchor" placement="top">Tooltip on top</tooltip-i>
+
+<span id="bottom-anchor">Hover for bottom tooltip</span>
+<tooltip-i anchor="bottom-anchor" placement="bottom">Tooltip on bottom</tooltip-i>
+
+<span id="left-anchor">Hover for left tooltip</span>
+<tooltip-i anchor="left-anchor" placement="left">Tooltip on left</tooltip-i>
+
+<span id="right-anchor">Hover for right tooltip</span>
+<tooltip-i anchor="right-anchor" placement="right">Tooltip on right</tooltip-i>
+```
+
+## With custom styling
+
+```html
+<span id="custom-anchor">Hover for custom tooltip</span>
+<tooltip-i anchor="custom-anchor" style="--tooltip-bg: var(--color-bg-danger); --tooltip-color: var(--color-fg-danger);">
+  Custom colored tooltip
+</tooltip-i>
+```
+
+## Usage notes
+
+- The `anchor` attribute should match the `id` of the element you want to anchor to
+- The `placement` attribute controls where the tooltip appears (top, bottom, left, right)
+- Default placement is `top`
+- Tooltips automatically appear on hover and hide when the mouse leaves
+- Uses CSS anchor positioning for automatic placement
+- Falls back gracefully in browsers without anchor positioning support
+**/
+
+tooltip-i {
+  --tooltip-bg: var(--color-bg-primary);
+  --tooltip-color: var(--color-fg-primary);
+  --tooltip-padding: var(--spacing-xs) var(--spacing-s);
+  --tooltip-radius: var(--border-radius-s);
+  --tooltip-offset: 8px;
+
+  background: var(--tooltip-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--tooltip-radius);
+  box-shadow: var(--shadow-m);
+  color: var(--tooltip-color);
+  font-size: var(--font-size-xs);
+  padding: var(--tooltip-padding);
+  white-space: nowrap;
+  z-index: 1000;
+
+  /* Popover setup */
+  margin: 0;
+  inset: unset;
+
+  /* Default to top placement */
+  position-anchor: --tooltip-anchor;
+  bottom: anchor(top);
+  left: anchor(center);
+  translate: -50% calc(-1 * var(--tooltip-offset));
+
+  /* Bottom placement */
+  &[placement="bottom"] {
+    top: anchor(bottom);
+    bottom: unset;
+    left: anchor(center);
+    translate: -50% var(--tooltip-offset);
+  }
+
+  /* Left placement */
+  &[placement="left"] {
+    right: anchor(left);
+    bottom: unset;
+    top: anchor(center);
+    left: unset;
+    translate: calc(-1 * var(--tooltip-offset)) -50%;
+  }
+
+  /* Right placement */
+  &[placement="right"] {
+    left: anchor(right);
+    bottom: unset;
+    top: anchor(center);
+    translate: var(--tooltip-offset) -50%;
+  }
+}
+
+/* Set up anchor positioning for elements with tooltip */
+[id]:has(+ tooltip-i[anchor]) {
+  anchor-name: --tooltip-anchor;
+}
+
+/* Show tooltip on hover of the anchor element */
+[id]:has(+ tooltip-i[anchor]):hover + tooltip-i[anchor] {
+  display: block;
+}
+
+/* Keep tooltip visible when hovering over it */
+tooltip-i[anchor]:hover {
+  display: block;
+}
+
+/* Hide tooltip by default */
+tooltip-i[anchor] {
+  display: none;
+}

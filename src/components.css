@@ -8,6 +8,7 @@
 @import url("./misc/Alert.css") layer(tayasui.components);
 @import url("./misc/Badge.css") layer(tayasui.components);
 @import url("./misc/Skeleton.css") layer(tayasui.components);
+@import url("./misc/Tooltip.css") layer(tayasui.components);
 @import url("./facets.css") layer(tayasui.components);
 
 /* bun bundler doesn't like having this line above the @imports */
