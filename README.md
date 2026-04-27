@@ -15,3 +15,5 @@ Experiments with custom elements
     }
   }
 ```
+3. Include the main css file, eg `import 'tayasui/src/all.css'` (assuming Vite)
+4. Add your theme variables in a `:root { }` block somewhere in your css
