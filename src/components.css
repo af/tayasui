@@ -1,14 +1,14 @@
-@import url("./layout/Stack.css") layer(tayasui.components);
-@import url("./layout/Container.css") layer(tayasui.components);
-@import url("./layout/Card.css") layer(tayasui.components);
+@import url("./layout/Stack.css") layer(taya-components);
+@import url("./layout/Container.css") layer(taya-components);
+@import url("./layout/Card.css") layer(taya-components);
 
-@import url("./forms/LabelledField.css") layer(tayasui.components);
-@import url("./forms/Switch.css") layer(tayasui.components);
+@import url("./forms/LabelledField.css") layer(taya-components);
+@import url("./forms/Switch.css") layer(taya-components);
 
-@import url("./misc/Alert.css") layer(tayasui.components);
-@import url("./misc/Badge.css") layer(tayasui.components);
-@import url("./misc/Skeleton.css") layer(tayasui.components);
-@import url("./facets.css") layer(tayasui.components);
+@import url("./misc/Alert.css") layer(taya-components);
+@import url("./misc/Badge.css") layer(taya-components);
+@import url("./misc/Skeleton.css") layer(taya-components);
+@import url("./facets.css") layer(taya-components);
 
 /* bun bundler doesn't like having this line above the @imports */
-@layer tayasui.components {}
+@layer taya-components {}

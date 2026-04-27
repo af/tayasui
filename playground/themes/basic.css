@@ -1,4 +1,4 @@
-@layer tayasui.reset, tayasui.base, tayasui.components, app;
+@layer taya-reset, taya-base, taya-components, app;
 
 :root[data-theme="basic"] {
   /* Colors - Background */

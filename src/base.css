@@ -1,6 +1,6 @@
 /* Base application of custom properties to built-in elements */
 
-@layer tayasui.base {
+@layer taya-base {
   html {
     background-color: var(--color-bg-ground);
     color: var(--color-fg-primary);

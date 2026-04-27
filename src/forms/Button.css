@@ -60,7 +60,7 @@ Buttongroup can also be used to wrap radio buttons:
 </buttongroup-i>
 ```
 **/
-@layer tayasui.base {
+@layer taya-base {
   @keyframes spin {
     from {
       transform: rotate(0deg);

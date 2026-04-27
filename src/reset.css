@@ -1,5 +1,5 @@
 /* adapted from https://www.joshwcomeau.com/css/custom-css-reset/ */
-@layer tayasui.reset {
+@layer taya-reset {
 
   *,
   *::before,

@@ -16,4 +16,10 @@ Experiments with custom elements
   }
 ```
 3. Include the main css file, eg `import 'tayasui/src/all.css'` (assuming Vite)
-4. Add your theme variables in a `:root { }` block somewhere in your css
+4. In your main css entrypoint:
+* add css layer declarations, eg:
+```
+/* `app` can be replaced with whichever higher-precedence layers you'd like */
+@layer taya-reset, taya-base, taya-components, app;` 
+```
+* add your theme variables in a `:root { }` block
