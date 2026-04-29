@@ -7,7 +7,15 @@ Basic skeleton loading component with a shimmer effect.
 <skeleton-i></skeleton-i>
 ```
 ```html
-<skeleton-i width="s"></skeleton-i>
+Sizes
+<vstack-i>
+  <skeleton-i width="xxs"></skeleton-i>
+  <skeleton-i width="xs"></skeleton-i>
+  <skeleton-i width="s"></skeleton-i>
+  <skeleton-i width="m"></skeleton-i>
+  <skeleton-i width="l"></skeleton-i>
+  <skeleton-i width="xl"></skeleton-i>
+</vstack-i>
 ```
 ```html
 <skeleton-i radius="full"></skeleton-i>
@@ -35,7 +43,8 @@ This component only provides a single box; combine it with layout primitives to 
     transform: translateX(-100%);
   }
 
-  60%, 100% {
+  60%,
+  100% {
     transform: translateX(100%);
   }
 }
@@ -48,18 +57,26 @@ skeleton-i {
   position: relative;
   display: block;
   height: var(--height, 1.4em);
-  width: var(--width, 100%);
+  width: var(--width, 90%);
+
+  /* prevent fixed-width items from getting squished */
+  flex-shrink: 0;
 
   &::after {
     content: "";
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 200px;
     transform: translateX(-100%);
-    background: linear-gradient(115deg,
-        transparent,
-        var(--shimmer),
-        transparent);
+    background: linear-gradient(115deg, transparent, var(--shimmer), transparent);
     animation: shimmer 2.4s ease-in-out infinite;
+  }
+
+  &[width="xxs"] {
+    width: 10%;
   }
 
   &[width="xs"] {
@@ -67,14 +84,18 @@ skeleton-i {
   }
 
   &[width="s"] {
-    width: 50%;
+    width: 40%;
   }
 
   &[width="m"] {
-    width: 75%;
+    width: 50%;
   }
 
   &[width="l"] {
-    width: 100%;
+    width: 75%;
+  }
+
+  &[width="xl"] {
+    width: 90%;
   }
 }

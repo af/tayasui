@@ -37,7 +37,7 @@ main {
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius-m);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: var(--spacing-l);
+  padding: var(--spacing-xl) var(--spacing-xxl);
   flex: 1;
 }
 
