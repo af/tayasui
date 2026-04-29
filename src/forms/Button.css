@@ -6,7 +6,7 @@ https://css-tricks.com/explaining-the-accessible-benefits-of-using-semantic-html
 ```html
 <button>Default</button>
 <button data-variant="outline">Outline</button>
-<button data-variant="outline" data-action="danger">Danger</button>
+<button data-variant="outline" data-tone="danger">Danger</button>
 <a href="#fake" data-as="button">Link Button</a>
 <button data-variant="text">Text button</button>
 ```
@@ -25,7 +25,7 @@ Small buttons:
   <button data-size="s">Smol</button>
   <button data-size="s" data-variant="outline">Smol2</button>
   <button data-size="s" data-variant="outline" disabled aria-busy="true">Smol</button>
-  <button data-size="s" data-variant="outline" data-action="danger">smol danger</button>
+  <button data-size="s" data-variant="outline" data-tone="danger">smol danger</button>
 </hstack-i>
 ```
 
@@ -72,7 +72,6 @@ Buttongroup can also be used to wrap radio buttons:
   }
 
   /* todo: add data-* attributes to tayasui.d.ts? */
-  /* todo: better name than data-action */
   button,
   [data-as="button"] {
     --color: var(--color-bg-cta);
@@ -121,7 +120,7 @@ Buttongroup can also be used to wrap radio buttons:
       padding: 0;
     }
 
-    &[data-action="danger"] {
+    &[data-tone="danger"] {
       --color: var(--color-fg-danger);
     }
 
@@ -176,12 +175,12 @@ Buttongroup can also be used to wrap radio buttons:
       border-radius: 0;
     }
 
-    >*:first-child {
+    > *:first-child {
       border-top-left-radius: var(--radius);
       border-bottom-left-radius: var(--radius);
     }
 
-    >*:last-child {
+    > *:last-child {
       border-top-right-radius: var(--radius);
       border-bottom-right-radius: var(--radius);
     }

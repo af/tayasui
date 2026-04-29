@@ -28,19 +28,18 @@ declare module 'react/jsx-runtime' {
       >
       'vstack-i': CustomElementProps<StackAttrs>
       'hstack-i': CustomElementProps<StackAttrs & { breakpoint?: 's' | 'm' }>
-      'zstack-i': CustomElementProps<{
-        arrange?: 'fan-up' | 'fan-right'
-      }>
 
-      'alert-i': CustomElementProps<{
-        level?: 'success' | 'warn' | 'danger'
-      }>
+      'alert-i': CustomElementProps<
+        BlockAttrs & {
+          tone?: 'success' | 'warn' | 'danger' | 'neutral' | 'info'
+        }
+      >
       'skeleton-i': CustomElementProps<{
         width?: 's' | 'm' | 'l' | 'xl'
         radius?: 's' | 'm' | 'full' | 'none'
       }>
       'badge-i': CustomElementProps<{
-        type?: 'primary' | 'neutral' | 'danger' | 'warn' | 'success'
+        type?: 'info' | 'neutral' | 'danger' | 'warn' | 'success'
         radius?: 's' | 'm' | 'full' | 'none'
       }>
       'card-i': CustomElementProps<BlockAttrs>

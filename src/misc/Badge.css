@@ -3,18 +3,18 @@
 
 ```html
 <hstack-i>
-  <badge-i>Primary</badge-i>
-  <badge-i type="neutral">Neutral</badge-i>
-  <badge-i type="danger" radius="full">Danger</badge-i>
-  <badge-i type="warn" radius="full">Warn</badge-i>
-  <badge-i type="success" radius="full">Success</badge-i>
+  <badge-i>Default</badge-i>
+  <badge-i tone="neutral">Neutral</badge-i>
+  <badge-i tone="danger" radius="full">Danger</badge-i>
+  <badge-i tone="warn" radius="full">Warn</badge-i>
+  <badge-i tone="success" radius="full">Success</badge-i>
 </hstack-i>
 ```
 ```html
 <hstack-i>
-  <badge-i type="neutral" contenteditable>Default</badge-i>
-  <badge-i type="neutral" radius="none" contenteditable>No radius</badge-i>
-  <badge-i type="neutral" radius="full" contenteditable>Full radius</badge-i>
+  <badge-i tone="neutral" contenteditable>Default</badge-i>
+  <badge-i tone="neutral" radius="none" contenteditable>No radius</badge-i>
+  <badge-i tone="neutral" radius="full" contenteditable>Full radius</badge-i>
 </hstack-i>
 ```
 **/
@@ -31,23 +31,23 @@ badge-i {
   padding: var(--spacing-xs) var(--spacing-s);
   gap: var(--spacing-xs);
 
-  &[type="danger"] {
+  &[tone="danger"] {
     color: var(--color-fg-danger);
     background: var(--color-bg-danger);
   }
 
-  &[type="neutral"] {
+  &[tone="neutral"] {
     color: inherit;
     background: none;
     border: 1px solid var(--color-border);
   }
 
-  &[type="warn"] {
+  &[tone="warn"] {
     color: var(--color-fg-warn);
     background: var(--color-bg-warn);
   }
 
-  &[type="success"] {
+  &[tone="success"] {
     color: var(--color-fg-success);
     background: var(--color-bg-success);
   }

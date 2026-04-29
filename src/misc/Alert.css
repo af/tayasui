@@ -1,39 +1,45 @@
 /**
 # `<alert-i>`
 
-General purprose alert banner, supporting several `level` variants.
+General purprose alert banner, supporting several `tone` variants.
 
 Acts as a block container; use an hstack child if you need horizontally laid out content.
 
 ## Attributes
 
 * role (required) - "alert"
-* level - "success" | "warn" | "danger"
+* tone - "success" | "warn" | "danger"
 * pad - "xs" | "s" | "m" | "l" | "xl"
 * vpad - "xs" | "s" | "m" | "l" | "xl"
 
 ```html
 <alert-i role="alert">
   <h2>Did you know?</h2>
-  <p>This is a generic alert</p>
+  <p>This is a default/info alert</p>
 </alert-i>
 ```
 ```html
-<alert-i role="alert" level="success">
+<alert-i role="alert" tone="success">
   <h2>Success</h2>
   <p>This is a success alert</p>
 </alert-i>
 ```
 ```html
-<alert-i role="alert" level="warn">
+<alert-i role="alert" tone="warn">
   <h2>Warning</h2>
   <p>This is a warning alert</p>
 </alert-i>
 ```
 ```html
-<alert-i role="alert" level="danger">
+<alert-i role="alert" tone="danger">
   <h2>Danger</h2>
   <p>This is a danger alert</p>
+</alert-i>
+```
+```html
+<alert-i role="alert" tone="neutral">
+  <h2>Meh</h2>
+  <p>This is neutral</p>
 </alert-i>
 ```
 **/
@@ -62,17 +68,22 @@ alert-i {
     margin: 0 0 var(--spacing-xs);
   }
 
-  &[level="success"] {
+  &[tone="neutral"] {
+    --color: var(--color-fg-secondary);
+    --bg: transparent;
+  }
+
+  &[tone="success"] {
     --color: var(--color-fg-success);
     --bg: var(--color-bg-success);
   }
 
-  &[level="warn"] {
+  &[tone="warn"] {
     --color: var(--color-fg-warn);
     --bg: var(--color-bg-warn);
   }
 
-  &[level="danger"] {
+  &[tone="danger"] {
     --color: var(--color-fg-danger);
     --bg: var(--color-bg-danger);
   }
