@@ -37,8 +37,6 @@ main {
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius-m);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  /* FIXME: update this */
-  max-width: 50em;
   padding: var(--spacing-l);
   flex: 1;
 }
@@ -61,7 +59,7 @@ side-by-side {
     font-size: var(--font-size-s);
   }
 
-  >div {
+  > div {
     padding: var(--spacing-m);
   }
 }
