@@ -5,7 +5,8 @@ hstack-i,
 container-i,
 [data-as="container-i"],
 card-i,
-[data-as="card-i"] {
+[data-as="card-i"],
+alert-i {
   &[gap="xs"] {
     gap: var(--spacing-xs);
   }

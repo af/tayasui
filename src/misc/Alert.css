@@ -3,7 +3,14 @@
 
 General purprose alert banner, supporting several `level` variants.
 
-Acts as a block container; use an hstack child if you need horizontally laid out content
+Acts as a block container; use an hstack child if you need horizontally laid out content.
+
+## Attributes
+
+* role (required) - "alert"
+* level - "success" | "warn" | "danger"
+* pad - "xs" | "s" | "m" | "l" | "xl"
+* vpad - "xs" | "s" | "m" | "l" | "xl"
 
 ```html
 <alert-i role="alert">
