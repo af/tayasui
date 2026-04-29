@@ -32,16 +32,16 @@ This component only provides a single box; combine it with layout primitives to 
  **/
 @keyframes shimmer {
   0% {
-    left: -100%;
+    transform: translateX(-100%);
   }
 
-  100% {
-    left: 100%;
+  60%, 100% {
+    transform: translateX(100%);
   }
 }
 
 skeleton-i {
-  --shimmer: rgba(255, 255, 255, 0.3);
+  --shimmer: light-dark(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.18));
   background: var(--color-fg-skeleton, #eaeaea);
   border-radius: var(--border-radius-s);
   overflow: hidden;
@@ -53,18 +53,13 @@ skeleton-i {
   &::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    min-width: 200px;
-    height: 100%;
-    background: linear-gradient(135deg,
-        transparent 0,
-        transparent 20%,
-        var(--shimmer) 50%,
-        transparent 80%,
-        transparent 100%);
-    animation: shimmer 2s infinite;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(115deg,
+        transparent,
+        var(--shimmer),
+        transparent);
+    animation: shimmer 2.4s ease-in-out infinite;
   }
 
   &[width="xs"] {
