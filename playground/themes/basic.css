@@ -45,7 +45,6 @@
 
   --shadow-m: 0 3px 8px rgba(0, 0, 0, 0.06);
 
-  /* Spacing (TODO: consolidate with the above) */
   --spacing-xxs: 2px;
   --spacing-xs: 4px;
   --spacing-s: 8px;
@@ -56,6 +55,5 @@
 
   --font-family-text: Palatino, serif;
   --font-family-display: Palatino, serif;
-  /** TODO: need a better name for this */
   --font-family-micro: system-ui, sans-serif;
 }

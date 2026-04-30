@@ -1,7 +1,9 @@
 /**
+# Button
+
 Here's an element you already know and love: the humble button.
 
-https://css-tricks.com/explaining-the-accessible-benefits-of-using-semantic-html-elements/
+Do you really need a giant Button.tsx file in your project that supports 50 props? The browser already gives us one for free and we are not using it to its full potential.
 
 ```html
 <button>Default</button>
@@ -29,36 +31,10 @@ Small buttons:
 </hstack-i>
 ```
 
-## ButtonGroup
-```html
-<buttongroup-i>
-  <button>group 1</button>
-  <button>group 2</button>
-</buttongroup-i>
-```
+## References
 
-```html
-<buttongroup-i>
-  <button data-variant="outline">group 1</button>
-  <button data-variant="outline">group 2</button>
-  <button data-variant="outline">group 3</button>
-</buttongroup-i>
-```
+* https://css-tricks.com/explaining-the-accessible-benefits-of-using-semantic-html-elements/
 
-Buttongroup can also be used to wrap radio buttons:
-```html
-<buttongroup-i>
-  <label>
-    Option 1 <input type="radio" name="radio-group" checked>
-  </label>
-  <label>
-    Option 2 <input type="radio" name="radio-group">
-  </label>
-  <label>
-    Option 3 <input type="radio" name="radio-group">
-  </label>
-</buttongroup-i>
-```
 **/
 @layer taya-base {
   @keyframes spin {
@@ -85,6 +61,7 @@ Buttongroup can also be used to wrap radio buttons:
     background-color: var(--color);
     color: var(--color-fg-cta);
     font-family: inherit;
+    font-size: var(--font-size-s);
     line-height: 1.7;
     padding: var(--spacing-xxs) var(--spacing-m);
     border: var(--borderWidth) solid var(--color);
@@ -125,8 +102,8 @@ Buttongroup can also be used to wrap radio buttons:
     }
 
     &[data-size="s"] {
-      font-size: var(--font-size-s);
-      padding: 0 var(--spacing-s);
+      font-size: var(--font-size-xs);
+      padding: 0 var(--spacing-m);
     }
 
     &:disabled,
@@ -163,48 +140,6 @@ Buttongroup can also be used to wrap radio buttons:
     /* TODO: fix alignment bug when icon is taller than text */
     svg {
       flex-shrink: 0;
-    }
-  }
-
-  buttongroup-i {
-    display: flex;
-    gap: 1px;
-
-    button {
-      /* only use button radius values defined below for first/last children */
-      border-radius: 0;
-    }
-
-    > *:first-child {
-      border-top-left-radius: var(--radius);
-      border-bottom-left-radius: var(--radius);
-    }
-
-    > *:last-child {
-      border-top-right-radius: var(--radius);
-      border-bottom-right-radius: var(--radius);
-    }
-
-    button[data-variant="outline"]:not(:first-child),
-    label:not(:first-child) {
-      margin-left: calc(-1px - var(--borderWidth, 1px));
-    }
-
-    /* <buttongroup-i> can also be used to wrap <label>text <input type="radio"></label> items */
-    label {
-      --radius: var(--border-radius-m);
-      border: 1px solid var(--color-border);
-      cursor: pointer;
-      padding: var(--spacing-xs) var(--spacing-m);
-
-      &:has(input[type="radio"]:checked) {
-        color: var(--color-fg-cta);
-        background-color: var(--color-bg-cta);
-      }
-    }
-
-    input[type="radio"] {
-      display: none;
     }
   }
 }

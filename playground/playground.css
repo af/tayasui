@@ -11,10 +11,11 @@ nav {
   top: 0;
 
   h2 {
-    color: var(--color-fg-secondary);
-    font-size: 0.8rem;
+    color: var(--color-fg-tertiary);
+    font-size: var(--font-size-xs);
     text-transform: uppercase;
     font-weight: bold;
+    line-height: 1.8;
     font-family: var(--font-family-micro, --font-family-text);
   }
 
@@ -24,7 +25,8 @@ nav {
   }
 
   a[aria-current="page"] {
-    color: inherit;
+    color: var(--color-fg-secondary);
+    font-weight: bold;
     text-decoration: none;
   }
 }
@@ -36,9 +38,20 @@ code {
 main {
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius-m);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  box-shadow: var(--shadow-m);
   padding: var(--spacing-xl) var(--spacing-xxl);
   flex: 1;
+
+  > p {
+    max-width: 45em;
+    margin: 1rem 0;
+  }
+
+  > h2,
+  > h3 {
+    margin-top: 1em;
+  }
 }
 
 side-by-side {

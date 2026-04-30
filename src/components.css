@@ -2,6 +2,7 @@
 @import url("./layout/Container.css") layer(taya-components);
 @import url("./layout/Card.css") layer(taya-components);
 
+@import url("./forms/ButtonGroup.css") layer(taya-components);
 @import url("./forms/LabelledField.css") layer(taya-components);
 @import url("./forms/Switch.css") layer(taya-components);
 
