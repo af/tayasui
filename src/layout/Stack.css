@@ -1,6 +1,8 @@
 /**
 # `<hstack-i>` and `<vstack-i>`
 
+Inspired by SwiftUI's HStack and VStack views, these components give you a simple way to create simple horizontal or vertical flex containers without adding any CSS.
+
 ```html
 <hstack-i>
   <demo-block></demo-block>
@@ -16,6 +18,22 @@
   <demo-block></demo-block>
 </vstack-i>
 ```
+
+## Attributes
+
+* align
+* justify
+* wrap
+* gap
+* pad
+* vpad
+* breakpoint (hstack only)
+
+## References
+
+* https://developer.apple.com/documentation/swiftui/building-layouts-with-stack-views
+* https://developer.apple.com/documentation/swiftui/hstack
+* https://developer.apple.com/documentation/swiftui/vstack
 **/
 
 vstack-i,
@@ -91,8 +109,8 @@ hstack-i,
 }
 
 /* Prevent svg icons from getting squished */
-hstack-i>svg,
-vstack-i>svg {
+hstack-i > svg,
+vstack-i > svg {
   flex-shrink: 0;
 }
 
