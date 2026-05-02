@@ -1,0 +1,124 @@
+/**
+# `<dropdown-i>`
+
+Initial notes
+* need popovertargetaction to close dropdown via button (suggest JS shim)
+
+```html
+<dropdown-i>
+  <button popovertarget="menu-a">
+    Open dropdown
+  </button>
+  <div id="menu-a" popover>
+    <button>Action 1</button>
+    <button>Action 2, longer label</button>
+    <button popovertarget="menu-a" popovertargetaction="hide">
+      <span>Action 3, even longer such that there should be ellipsis</span>
+    </button>
+  </div>
+</dropdown-i>
+```
+
+```html
+<dropdown-i>
+  <button popovertarget="menu-b">
+    Open multiselect
+  </button>
+  <div id="menu-b" popover>
+    <label>
+      <input type="checkbox" name="x" />Item X
+    </label>
+    <label>
+      <input type="checkbox" name="y" />Item Y
+    </label>
+    <label>
+      <input type="checkbox" name="z" />Item Z
+    </label>
+  </div>
+</dropdown-i>
+```
+
+```html
+<dropdown-i>
+  <button popovertarget="menu-c">
+    Open single select
+  </button>
+  <div id="menu-c" popover>
+    <label>
+      <input type="radio" name="r" />Item X
+    </label>
+    <label>
+      <input type="radio" name="r" />Item Y
+    </label>
+    <label>
+      <input type="radio" name="r" />Item Z
+    </label>
+  </div>
+</dropdown-i>
+```
+
+## References
+
+* https://developer.chrome.com/docs/css-ui/anchor-positioning-api
+
+**/
+dropdown-i {
+  /* inherited by [popover] */
+  max-width: 20em;
+
+  > [popover] {
+    position: absolute;
+    top: anchor(bottom);
+    left: anchor(left);
+    max-width: inherit;
+
+    color: var(--color-fg-primary);
+    background-color: var(--color-bg-floating, var(--color-bg-primary));
+    border: none;
+    border-radius: var(--border-radius-m);
+    padding: var(--spacing-xs);
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+
+    @starting-style {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    &:popover-open {
+      display: flex;
+      flex-direction: column;
+    }
+
+    > button,
+    > label {
+      display: flex;
+      min-width: 0;
+      gap: var(--spacing-m);
+      background: none;
+      border: none;
+      color: inherit;
+      padding: var(--spacing-xs) var(--spacing-m);
+      justify-content: flex-start;
+      transform: none;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:has(:focus) {
+        background: var(--color-bg-highlight);
+      }
+
+      /* because button above is a flex container, any long text that might need ellipsis needs to
+       * be wrapped in a span */
+      > span {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
