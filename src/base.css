@@ -42,9 +42,11 @@
     }
   }
 
-  /* auto-grow textareas by default. Use with min-width/width and max-height to constrain to surroundings */
+  /* auto-grow textareas by default. Override min-width/width and max-height to constrain to surroundings */
   textarea {
     field-sizing: content;
+    min-width: 10em;
+    max-width: 100%;
   }
 
   /* Improve usability a bit by making input labels visibly clickable */
