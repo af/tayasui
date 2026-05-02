@@ -17,7 +17,7 @@ const commentDocRegex = /^\/\*\*(.+)?\*\*\//s
 const getDocPageFromPath = (filepath: string) => {
   const content = fs.readFileSync(`./src/${filepath}`, 'utf-8')
   const commentMatch = commentDocRegex.exec(content)
-  const markdown = commentMatch?.[1].replace(/^\s*\*\s?/gm, '').trim()
+  const markdown = commentMatch?.[1].trim()
 
   if (!markdown) return []
   return [
