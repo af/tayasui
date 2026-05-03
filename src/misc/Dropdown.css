@@ -9,7 +9,7 @@ Initial notes
   <button popovertarget="menu-a">
     Open dropdown
   </button>
-  <div id="menu-a" popover>
+  <div id="menu-a" popover aria-label="More actions">
     <button>Action 1</button>
     <button>Action 2, longer label</button>
     <button popovertarget="menu-a" popovertargetaction="hide">
@@ -24,17 +24,18 @@ Initial notes
   <button popovertarget="menu-b">
     Open multiselect
   </button>
-  <div id="menu-b" popover>
+  <fieldset id="menu-b" popover>
+    <legend>Options</legend>
     <label>
-      <input type="checkbox" name="x" />Item X
+      <input type="checkbox" name="x" /> Click me
     </label>
     <label>
-      <input type="checkbox" name="y" />Item Y
+      <input type="checkbox" name="y" /> And also me
     </label>
     <label>
-      <input type="checkbox" name="z" />Item Z
+      <input type="checkbox" name="z" /> And then me too
     </label>
-  </div>
+  </fieldset>
 </dropdown-i>
 ```
 
@@ -43,17 +44,18 @@ Initial notes
   <button popovertarget="menu-c">
     Open single select
   </button>
-  <div id="menu-c" popover>
+  <fieldset id="menu-c" popover>
+    <legend>Sort by</legend>
     <label>
-      <input type="radio" name="r" />Item X
+      <input type="radio" name="r" value="created" /> Created at
     </label>
     <label>
-      <input type="radio" name="r" />Item Y
+      <input type="radio" name="r" value="updated" /> Updated at
     </label>
     <label>
-      <input type="radio" name="r" />Item Z
+      <input type="radio" name="r" value="title" /> Title
     </label>
-  </div>
+  </fieldset>
 </dropdown-i>
 ```
 
@@ -65,8 +67,10 @@ Initial notes
 dropdown-i {
   /* inherited by [popover] */
   max-width: 20em;
+  --pad: var(--spacing-s);
+  --pad-item-side: var(--spacing-m);
 
-  > [popover] {
+  >[popover] {
     position: absolute;
     top: anchor(bottom);
     left: anchor(left);
@@ -76,7 +80,7 @@ dropdown-i {
     background-color: var(--color-bg-floating, var(--color-bg-primary));
     border: none;
     border-radius: var(--border-radius-m);
-    padding: var(--spacing-xs);
+    padding: var(--pad);
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
 
     transition:
@@ -93,15 +97,16 @@ dropdown-i {
       flex-direction: column;
     }
 
-    > button,
-    > label {
+    >button,
+    >label {
       display: flex;
       min-width: 0;
       gap: var(--spacing-m);
       background: none;
       border: none;
+      border-radius: var(--border-radius-s);
       color: inherit;
-      padding: var(--spacing-xs) var(--spacing-m);
+      padding: var(--pad) var(--pad-item-side);
       justify-content: flex-start;
       transform: none;
 
@@ -114,11 +119,20 @@ dropdown-i {
 
       /* because button above is a flex container, any long text that might need ellipsis needs to
        * be wrapped in a span */
-      > span {
+      >span {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
       }
+    }
+
+    >legend {
+      padding: 0 var(--pad-item-side);
+      float: left;
+      text-transform: uppercase;
+      color: var(--color-fg-secondary);
+      font-family: var(--font-family-micro);
+      font-size: var(--font-size-xs);
     }
   }
 }
