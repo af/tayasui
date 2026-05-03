@@ -29,8 +29,6 @@ const getDocPageFromPath = (filepath: string) => {
   ]
 }
 
-// TODO: also watch for changes in dev mode
-// see https://bun.com/docs/guides/read-file/watch
 export const writeDocPages = () => {
   const docPages = fs
     .readdirSync('./src', { encoding: 'utf8', recursive: true })
@@ -39,4 +37,14 @@ export const writeDocPages = () => {
 
   // Write data to a TS file that Bun's bundler can pick up
   fs.writeFileSync('./playground/data.js', `window.DOCS = ${JSON.stringify(docPages, null, 2)}`)
+}
+
+// also watch for changes and re-build docs on css changes in dev mode
+// see https://bun.com/docs/guides/read-file/watch
+//
+// TODO: this is inefficient; should only build the changed file, not everything
+if (process.env.NODE_ENV !== 'production') {
+  fs.watch('./src', { recursive: true }, (_event, filename) => {
+    if (filename?.endsWith('.css')) writeDocPages()
+  })
 }
