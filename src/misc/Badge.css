@@ -20,9 +20,9 @@
 **/
 badge-i {
   align-items: center;
-  background: var(--color-bg-highlight);
+  background: var(--color-bg-info);
   border-radius: var(--border-radius-m);
-  color: var(--color-fg-highlight);
+  color: var(--color-fg-info);
   font-size: var(--font-size-xs);
   font-family: var(--font-family-micro, --font-family-text);
   font-weight: 500;

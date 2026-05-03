@@ -44,8 +44,8 @@ Acts as a block container; use an hstack child if you need horizontally laid out
 ```
 **/
 alert-i {
-  --color: var(--color-fg-highlight);
-  --bg: var(--color-bg-highlight);
+  --color: var(--color-fg-info);
+  --bg: var(--color-bg-info);
   --padding: var(--spacing-m);
   --gap: var(--spacing-xs);
 

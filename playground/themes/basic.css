@@ -4,6 +4,7 @@
   /* Colors - Background */
   --color-bg-ground: #f0f2f5;
   --color-bg-primary: #fafafa;
+  --color-bg-highlight: #eaeafa;
 
   /* Colors - Text */
   --color-fg-primary: #333333;
@@ -22,8 +23,8 @@
   --color-border-hover: #c0c5d6;
 
   /* Colors - Status */
-  --color-fg-highlight: #007aff;
-  --color-bg-highlight: #ddeeff;
+  --color-fg-info: #007aff;
+  --color-bg-info: #ddeeff;
   --color-fg-warn: #f0a30a;
   --color-bg-warn: #fff8e6;
   --color-fg-danger: #e03b30;

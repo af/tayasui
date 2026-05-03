@@ -70,7 +70,7 @@ dropdown-i {
   --pad: var(--spacing-s);
   --pad-item-side: var(--spacing-m);
 
-  >[popover] {
+  > [popover] {
     position: absolute;
     top: anchor(bottom);
     left: anchor(left);
@@ -97,8 +97,8 @@ dropdown-i {
       flex-direction: column;
     }
 
-    >button,
-    >label {
+    > button,
+    > label {
       display: flex;
       min-width: 0;
       gap: var(--spacing-m);
@@ -119,14 +119,14 @@ dropdown-i {
 
       /* because button above is a flex container, any long text that might need ellipsis needs to
        * be wrapped in a span */
-      >span {
+      > span {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
       }
     }
 
-    >legend {
+    > legend {
       padding: 0 var(--pad-item-side);
       float: left;
       text-transform: uppercase;

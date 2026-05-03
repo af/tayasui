@@ -1,7 +1,8 @@
 :root[data-theme="hpn"] {
   --color-bg-ground: #1c1c1c;
   --color-bg-primary: #222323;
-  --color-bg-floating: #444;
+  --color-bg-floating: #333;
+  --color-bg-highlight: #243932;
   --color-border: #444944;
   --color-border-secondary: #303430;
 
@@ -9,10 +10,16 @@
   --color-fg-secondary: rgb(178, 185, 183);
   --color-fg-tertiary: rgb(154, 162, 160);
   --color-fg-disabled: #777;
+
   --color-fg-success: #0ad056;
+  --color-bg-success: #1a2a1a;
   --color-fg-warn: #f0a30a;
+  --color-bg-warn: #f0a30a10;
   --color-fg-danger: #ee5d81;
-  --color-fg-highlight: #007aff;
+  --color-bg-danger: #3a1a1a;
+  --color-fg-info: #007aff;
+  --color-bg-info: #1a2a4a;
+
   --color-fg-skeleton: #444;
   --color-fg-skeleton-shimmer: rgba(255, 255, 255, 0.1);
 
@@ -47,10 +54,6 @@
 
   /* WIP: Missing color variables from basic.css */
   --color-border-hover: #556055;
-  --color-bg-highlight: #1a2a4a;
-  --color-bg-danger: #3a1a1a;
-  --color-bg-warn: #f0a30a10;
-  --color-bg-success: #1a2a1a;
   --font-size-xl: 24px;
   --font-size-xxl: 30px;
   --shadow-m: 0 2px 4px rgba(0, 0, 0, 0.3);

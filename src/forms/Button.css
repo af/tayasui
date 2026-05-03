@@ -6,11 +6,14 @@ Here's an element you already know and love: the humble button.
 Do you really need a giant Button.tsx file in your project that supports 50 props? The browser already gives us one for free and we are not using it to its full potential.
 
 ```html
-<button>Default</button>
-<button data-variant="outline">Outline</button>
-<button data-variant="outline" data-tone="danger">Danger</button>
-<a href="#fake" data-as="button">Link Button</a>
-<button data-variant="text">Text button</button>
+<hstack-i wrap="wrap">
+  <button>Default</button>
+  <button data-variant="outline">Outline</button>
+  <button data-variant="outline" data-tone="danger">Danger</button>
+  <a href="#fake" data-as="button">Link Button</a>
+  <button data-variant="text">Text button</button>
+  <button data-variant="texthover">Texthover button</button>
+</hstack-i>
 ```
 
 Loading and disabled states, using standard attributes:
@@ -89,12 +92,24 @@ Small buttons:
       }
     }
 
-    &[data-variant="text"] {
+    &[data-variant="text"],
+    &[data-variant="texthover"] {
       --color: var(--color-fg-link);
       color: var(--color);
       background-color: transparent;
       border: none;
+    }
+
+    &[data-variant="text"] {
       padding: 0;
+
+      &:hover {
+        --color: var(--color-fg-link-hover);
+      }
+    }
+
+    &[data-variant="texthover"]:hover {
+      background-color: var(--color-bg-highlight);
     }
 
     &[data-tone="danger"] {

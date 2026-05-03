@@ -58,7 +58,7 @@ switch-i {
     }
 
     &:checked {
-      background: var(--color-fg-highlight);
+      background: var(--color-fg-success);
 
       &::before {
         /* move the pseudo element so it's --pad away from the right edge */

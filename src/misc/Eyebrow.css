@@ -35,7 +35,7 @@ hgroup > p.eyebrow-i {
   font-family: var(--font-family-micro, --font-family-text);
   font-weight: 600;
   font-size: var(--font-size-xs);
-  color: var(--color-fg-highlight, --color-fg-secondary);
+  color: var(--color-fg-info, --color-fg-secondary);
   letter-spacing: 0.05em;
   margin: 0;
   text-transform: uppercase;
