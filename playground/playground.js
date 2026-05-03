@@ -3,14 +3,16 @@ const main = document.querySelector('main')
 
 // localStorage-based theme switcher
 const theme = localStorage.getItem('theme')
+const themeSelect = document.querySelector('[name=theme]')
 const setTheme = (theme) => {
   document.documentElement.setAttribute('data-theme', theme)
   localStorage.setItem('theme', theme)
 }
-if (theme) setTheme(theme)
-document
-  .querySelector('[name=theme]')
-  ?.addEventListener('change', (evt) => setTheme(evt.target.value))
+if (theme) {
+  setTheme(theme)
+  if (themeSelect) themeSelect.value = theme
+}
+themeSelect?.addEventListener('change', (evt) => setTheme(evt.target.value))
 
 const navigateTo = (hash) => {
   const page = window.DOCS.find((p) => p.name === hash)
