@@ -16,14 +16,20 @@ marked.use({ renderer })
 const commentDocRegex = /^\/\*\*(.+)?\*\*\//s
 const getDocPageFromPath = (filepath: string) => {
   const content = fs.readFileSync(`./src/${filepath}`, 'utf-8')
-  const commentMatch = commentDocRegex.exec(content)
-  const markdown = commentMatch?.[1].trim()
+
+  let markdown: string | undefined
+  if (filepath.endsWith('.md')) {
+    markdown = content.trim()
+  } else {
+    const commentMatch = commentDocRegex.exec(content)
+    markdown = commentMatch?.[1].trim()
+  }
 
   if (!markdown) return []
   return [
     {
       filepath,
-      name: filepath.replace('.css', ''),
+      name: filepath.replace(/\.(css|md)$/, ''),
       markdown: marked(markdown),
     },
   ]
@@ -32,7 +38,7 @@ const getDocPageFromPath = (filepath: string) => {
 export const writeDocPages = () => {
   const docPages = fs
     .readdirSync('./src', { encoding: 'utf8', recursive: true })
-    .filter((fname) => fname.endsWith('.css'))
+    .filter((fname) => fname.endsWith('.css') || fname.endsWith('.md'))
     .flatMap(getDocPageFromPath)
 
   // Write data to a TS file that Bun's bundler can pick up
@@ -45,6 +51,6 @@ export const writeDocPages = () => {
 // TODO: this is inefficient; should only build the changed file, not everything
 if (process.env.NODE_ENV !== 'production') {
   fs.watch('./src', { recursive: true }, (_event, filename) => {
-    if (filename?.endsWith('.css')) writeDocPages()
+    if (filename?.endsWith('.css') || filename?.endsWith('.md')) writeDocPages()
   })
 }
