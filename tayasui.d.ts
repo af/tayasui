@@ -47,6 +47,9 @@ declare module 'react/jsx-runtime' {
 
       'switch-i': CustomElementProps
       'labelledfield-i': CustomElementProps
+
+      'dropdown-i': CustomElementProps
+      'toggletip-i': CustomElementProps
     }
   }
 }

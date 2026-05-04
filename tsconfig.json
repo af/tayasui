@@ -1,16 +1,9 @@
 {
   "compilerOptions": {
-    "rootDirs": [
-      "."
-    ],
+    "rootDir": ".",
     "outDir": "./dist",
-    "baseUrl": ".",
-    "module": "esnext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2019"
-    ],
+    "module": "preserve",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "importHelpers": true,
     "strict": true,
     "allowJs": true,
@@ -18,18 +11,13 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "isolatedModules": true,
-    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "target": "es2019",
+    "target": "es2022",
     "noEmit": true
   },
-  "include": [
-    "tayasui.d.ts",
-    "src",
-    "tests"
-  ]
+  "include": ["tayasui.d.ts", "src", "tests"]
 }
