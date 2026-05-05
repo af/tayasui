@@ -71,26 +71,10 @@ dropdown-i {
   --pad-item-side: var(--spacing-m);
 
   > [popover] {
-    position: absolute;
-    top: anchor(bottom);
+    /* overrides for default popover styles in facets.css */
     left: anchor(left);
     max-width: inherit;
-
-    color: var(--color-fg-primary);
-    background-color: var(--color-bg-floating, var(--color-bg-primary));
-    border: none;
-    border-radius: var(--border-radius-m);
     padding: var(--pad);
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
-
-    transition:
-      opacity 0.2s,
-      transform 0.2s;
-
-    @starting-style {
-      opacity: 0;
-      transform: scale(0.8);
-    }
 
     &:popover-open {
       display: flex;
