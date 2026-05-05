@@ -43,14 +43,31 @@ main {
   padding: var(--spacing-xl) var(--spacing-xxl);
   flex: 1;
 
-  > p {
+  >p {
     max-width: 45em;
     margin: 1rem 0;
   }
 
-  > h2,
-  > h3 {
+  >h2,
+  >h3 {
     margin-top: 1em;
+  }
+}
+
+color-swatch {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+  font-size: var(--font-size-s);
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--border-radius-s);
+    /* --color is set in buildMarkdown.ts */
+    background: var(--color);
   }
 }
 
@@ -72,7 +89,7 @@ side-by-side {
     font-size: var(--font-size-s);
   }
 
-  > div {
+  >div {
     padding: var(--spacing-m);
   }
 }

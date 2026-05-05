@@ -2,13 +2,24 @@ import fs from 'node:fs'
 import { marked } from 'marked'
 
 const renderer = {
-  code({ text }) {
-    return `
+  code({ text, lang }) {
+    if (lang === 'color') {
+      return `
+      <color-swatch style="--color: var(${text})">
+      ${text}
+      </color-swatch>
+      `
+    }
+    if (lang === 'html') {
+      return `
       <side-by-side>
         ${marked.Renderer.prototype.code.call(this, { text })}
         <div>${text}</div>
       </side-by-side>
     `
+    }
+
+    return `<code>${text}</code>`
   },
 }
 marked.use({ renderer })
