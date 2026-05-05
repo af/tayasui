@@ -42,3 +42,17 @@ window.addEventListener('load', () => {
   const hash = location.hash.replace('#', '')
   navigateTo(hash)
 })
+
+// JS shim for tooltip-i popover hovering
+const popoverHover = (evt) => {
+  const source = evt.target
+  const parent = source?.parentElement
+  if (parent?.tagName !== 'TOOLTIP-I') return
+  const popover = parent.querySelector('[popover]')
+  if (evt.type === 'pointerover' || evt.type === 'focusin') popover?.showPopover({ source })
+  else popover?.hidePopover()
+}
+document.addEventListener('pointerover', popoverHover)
+document.addEventListener('pointerout', popoverHover)
+document.addEventListener('focusin', popoverHover)
+document.addEventListener('focusout', popoverHover)
