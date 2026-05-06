@@ -53,4 +53,9 @@
   label:has(input) {
     cursor: pointer;
   }
+
+  [interestfor] {
+    /* The default interest-delay is quite long for tooltips. Use a snappier default */
+    interest-delay: 0.15s;
+  }
 }
