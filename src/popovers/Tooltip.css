@@ -10,7 +10,7 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
   I have a tooltip
 </button>
 <tooltip-i>
-  <div role="tooltip" id="tooltip-x" popover>
+  <div role="tooltip" id="tooltip-x" popover="hint">
     This is the button's tooltip content
   </div>
 </tooltip-i>
@@ -21,7 +21,7 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
   Also, with interestfor, <a href="#" interestfor="tooltip-link">links</a> can also trigger tooltips
 </p>
 <tooltip-i>
-  <div role="tooltip" id="tooltip-link" popover>
+  <div role="tooltip" id="tooltip-link" popover="hint">
     This is the link's tooltip content
   </div>
 </tooltip-i>
@@ -35,6 +35,7 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
 ## References
 
 * https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using_interest_invokers
+* https://una.im/popover-hint/
 * https://frontendmasters.com/blog/using-the-popover-api-for-html-tooltips/
 * https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using#popover_anchor_positioning
 
@@ -42,7 +43,7 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
 tooltip-i {
   --arrow-size: 6px;
 
-  > [popover] {
+  >[popover] {
     /* Note: uses common [popover] styles from facets.css */
     margin-top: calc(1.2 * var(--arrow-size));
 
@@ -59,9 +60,8 @@ tooltip-i {
       clip-path: polygon(50% 0, 100% 100%, 0 100%);
     }
 
-    transition:
-      opacity 0.2s,
-      transform 0.2s;
+    transition: opacity 0.2s,
+    transform 0.2s;
 
     @starting-style {
       opacity: 0;

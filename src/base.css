@@ -56,6 +56,7 @@
 
   [interestfor] {
     /* The default interest-delay is quite long for tooltips. Use a snappier default */
+    /* biome-ignore lint/correctness/noUnknownProperty: new-ish property */
     interest-delay: 0.15s;
   }
 }

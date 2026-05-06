@@ -50,6 +50,7 @@ declare module 'react/jsx-runtime' {
 
       'dropdown-i': CustomElementProps
       'toggletip-i': CustomElementProps
+      'tooltip-i': CustomElementProps
     }
   }
 }
