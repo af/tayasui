@@ -9,10 +9,8 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
 <button interestfor="tooltip-x">
   I have a tooltip
 </button>
-<tooltip-i>
-  <div role="tooltip" id="tooltip-x" popover="hint">
-    This is the button's tooltip content
-  </div>
+<tooltip-i role="tooltip" id="tooltip-x" popover="hint">
+  This is the button's tooltip content
 </tooltip-i>
 ```
 
@@ -20,10 +18,8 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
 <p>
   Also, with interestfor, <a href="#" interestfor="tooltip-link">links</a> can also trigger tooltips
 </p>
-<tooltip-i>
-  <div role="tooltip" id="tooltip-link" popover="hint">
-    This is the link's tooltip content
-  </div>
+<tooltip-i role="tooltip" id="tooltip-link" popover="hint">
+  This is the link's tooltip content
 </tooltip-i>
 ```
 
@@ -43,29 +39,19 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
 tooltip-i {
   --arrow-size: 6px;
 
-  >[popover] {
-    /* Note: uses common [popover] styles from facets.css */
-    margin-top: calc(1.2 * var(--arrow-size));
+  /* Note: uses common [popover] styles from facets.css */
+  margin-top: calc(1.2 * var(--arrow-size));
 
-    /* css generated content arrow */
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      translate: -50% 0;
-      width: calc(2 * var(--arrow-size));
-      height: var(--arrow-size);
-      background-color: var(--color-bg-floating, var(--color-bg-primary));
-      clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    }
-
-    transition: opacity 0.2s,
-    transform 0.2s;
-
-    @starting-style {
-      opacity: 0;
-      transform: scale(0.8);
-    }
+  /* css generated content arrow */
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    translate: -50% 0;
+    width: calc(2 * var(--arrow-size));
+    height: var(--arrow-size);
+    background-color: var(--color-bg-floating, var(--color-bg-primary));
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
   }
 }

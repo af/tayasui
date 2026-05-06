@@ -1,5 +1,6 @@
 /* Common attributes and styles for various components */
 @layer taya-base {
+
   vstack-i,
   hstack-i,
   [data-as="hstack-i"],
@@ -96,9 +97,10 @@
   }
 
   /* Common popover styles */
-  dropdown-i > [popover],
-  tooltip-i > [popover],
-  toggletip-i > [popover] {
+  dropdown-i> :popover-open,
+  tooltip-i:popover-open,
+  toggletip-i:popover-open {
+    display: block;
     position: absolute;
     top: anchor(bottom);
     justify-self: anchor-center;

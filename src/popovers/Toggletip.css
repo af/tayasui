@@ -4,24 +4,20 @@
 Note: This uses the "implicit anchor", so the tooltip will position itself relative to the element (button) that triggered it.
 
 ```html
-<toggletip-i>
-  <button popovertarget="tip-x">
-    Click me for more info
-  </button>
-  <div role="status" id="tip-x" popover>
-    This is the toggletip content
-  </div>
+<button popovertarget="tip-x">
+  Click me for more info
+</button>
+<toggletip-i role="status" id="tip-x" popover>
+  This is the toggletip content
 </toggletip-i>
 ```
 
 ```html
-<toggletip-i>
   <button data-variant="text" popovertarget="tip-y" aria-label="More info">
     ⓘ
   </button>
-  <div role="status" id="tip-y" popover>
-    This is the toggletip content, visible after clicking
-  </div>
+<toggletip-i role="status" id="tip-y" popover>
+  This is the toggletip content, visible after clicking
 </toggletip-i>
 ```
 
@@ -34,20 +30,18 @@ Note: This uses the "implicit anchor", so the tooltip will position itself relat
 toggletip-i {
   --arrow-size: 6px;
 
-  > [popover] {
-    margin-top: calc(1.2 * var(--arrow-size));
+  margin-top: calc(1.2 * var(--arrow-size));
 
-    /* css arrow tooltip */
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      translate: -50% 0;
-      width: calc(2 * var(--arrow-size));
-      height: var(--arrow-size);
-      background-color: var(--color-bg-floating, var(--color-bg-primary));
-      clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    }
+  /* css arrow tooltip */
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    translate: -50% 0;
+    width: calc(2 * var(--arrow-size));
+    height: var(--arrow-size);
+    background-color: var(--color-bg-floating, var(--color-bg-primary));
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
   }
 }
