@@ -36,7 +36,8 @@
   --spacing-m: 12px;
   --spacing-l: 18px;
   --spacing-xl: 24px;
-  --spacing-xxl: 36px;
+  --spacing-2xl: 36px;
+  --spacing-3xl: 64px;
   --container-width-max: 1100px;
 
   --font-size-l: 18px;
@@ -55,7 +56,7 @@
   /* WIP: Missing color variables from basic.css */
   --color-border-hover: #556055;
   --font-size-xl: 24px;
-  --font-size-xxl: 30px;
+  --font-size-2xl: 30px;
   --shadow-m: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 

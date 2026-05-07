@@ -3,14 +3,14 @@
 
 Add supplemental information above your headings. Designed to help you use the correct `hgroup` & `p` tag semantics
 
-```
+```html
 <hgroup>
   <p class="eyebrow-i">Latest News</p>
   <h1>Exciting CSS Library Released</h1>
 </hgroup>
 ```
 
-```
+```html
 <hgroup>
   <p class="eyebrow-i" data-tone="neutral">
     Breaking
@@ -19,7 +19,7 @@ Add supplemental information above your headings. Designed to help you use the c
 </hgroup>
 ```
 
-```
+```html
 <hgroup>
   <p class="eyebrow-i" data-tone="danger">Oh shit</p>
   <h3>I'm in Danger</h3>
