@@ -14,7 +14,8 @@
 @import url("./misc/Badge.css") layer(taya-components);
 @import url("./misc/Eyebrow.css") layer(taya-components);
 @import url("./misc/Skeleton.css") layer(taya-components);
-@import url("./facets.css") layer(taya-components);
+@import url("./facets.css");
 
 /* bun bundler doesn't like having this line above the @imports */
-@layer taya-components {}
+@layer taya-components {
+}

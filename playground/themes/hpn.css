@@ -1,3 +1,5 @@
+@layer taya-reset, taya-base, taya-components, taya-override, app;
+
 :root[data-theme="hpn"] {
   --color-bg-ground: #1c1c1c;
   --color-bg-primary: #222323;

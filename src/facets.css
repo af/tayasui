@@ -1,6 +1,38 @@
 /* Common attributes and styles for various components */
 @layer taya-base {
+  /* Common popover styles */
+  dropdown-i > :popover-open,
+  tooltip-i:popover-open,
+  toggletip-i:popover-open {
+    display: block;
+    position: absolute;
+    top: anchor(bottom);
+    justify-self: anchor-center;
 
+    color: var(--color-fg-primary);
+    border: none;
+    border-radius: var(--border-radius-m);
+    background-color: var(--color-bg-floating, var(--color-bg-primary));
+    font-size: var(--font-size-s);
+
+    padding: var(--spacing-s) var(--spacing-m);
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+
+    /* for css generated content arrows */
+    overflow: visible;
+
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+
+    @starting-style {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+}
+
+@layer taya-override {
   vstack-i,
   hstack-i,
   [data-as="hstack-i"],
@@ -93,37 +125,6 @@
 
     &[radius="full"] {
       border-radius: var(--border-radius-full);
-    }
-  }
-
-  /* Common popover styles */
-  dropdown-i> :popover-open,
-  tooltip-i:popover-open,
-  toggletip-i:popover-open {
-    display: block;
-    position: absolute;
-    top: anchor(bottom);
-    justify-self: anchor-center;
-
-    color: var(--color-fg-primary);
-    border: none;
-    border-radius: var(--border-radius-m);
-    background-color: var(--color-bg-floating, var(--color-bg-primary));
-    font-size: var(--font-size-s);
-
-    padding: var(--spacing-s) var(--spacing-m);
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
-
-    /* for css generated content arrows */
-    overflow: visible;
-
-    transition:
-      opacity 0.2s,
-      transform 0.2s;
-
-    @starting-style {
-      opacity: 0;
-      transform: scale(0.8);
     }
   }
 }

@@ -10,9 +10,17 @@ const renderer = {
       </color-swatch>
       `
     }
-    if (lang === 'html') {
+    if (lang === 'spacing') {
       return `
-      <side-by-side>
+      <spacing-bar style="--width: var(${text})">
+      ${text}
+      </spacing-bar>
+      `
+    }
+    if (['html', 'html-wide'].includes(lang)) {
+      const props = lang === 'html-wide' ? 'direction="column"' : ''
+      return `
+      <side-by-side ${props}>
         ${marked.Renderer.prototype.code.call(this, { text })}
         <div>${text}</div>
       </side-by-side>

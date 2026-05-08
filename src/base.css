@@ -6,6 +6,7 @@
     color: var(--color-fg-primary);
     font-family: var(--font-family-text);
     font-size: var(--font-size-m);
+    min-height: 100dvh;
   }
 
   body {
@@ -19,7 +20,7 @@
     max-width: 50em;
 
     &:not(:last-child) {
-      margin: 0 0 1em;
+      margin-bottom: 1em;
     }
   }
 
@@ -30,9 +31,13 @@
   h5,
   h6 {
     line-height: 1.2;
-    margin: 0 0 var(--spacing-s);
+    margin: 0;
 
     &:not(:first-child) {
+      margin-top: 1em;
+    }
+
+    & + p {
       margin-top: 1em;
     }
   }
@@ -61,6 +66,10 @@
     &::placeholder {
       color: var(--color-fg-tertiary);
     }
+  }
+
+  select {
+    cursor: pointer;
   }
 
   /* auto-grow textareas by default. Override min-width/width and max-height to constrain to surroundings */

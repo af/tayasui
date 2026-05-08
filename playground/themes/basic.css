@@ -1,4 +1,4 @@
-@layer taya-reset, taya-base, taya-components, app;
+@layer taya-reset, taya-base, taya-components, taya-override, app;
 
 :root[data-theme="basic"] {
   /* Colors - Background */

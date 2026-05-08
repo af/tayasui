@@ -7,8 +7,11 @@ nav {
   height: fit-content;
   min-width: 200px;
   padding: var(--spacing-l);
-  position: sticky;
-  top: 0;
+
+  @media (min-width: 800px) {
+    position: sticky;
+    top: 0;
+  }
 
   h2 {
     color: var(--color-fg-tertiary);
@@ -40,8 +43,12 @@ main {
   border-radius: var(--border-radius-m);
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
   box-shadow: var(--shadow-m);
-  padding: var(--spacing-2xl) var(--spacing-3xl);
+  padding: var(--spacing-l);
   flex: 1;
+
+  @media (min-width: 800px) {
+    padding: var(--spacing-2xl) var(--spacing-3xl);
+  }
 }
 
 color-swatch {
@@ -49,6 +56,8 @@ color-swatch {
   align-items: center;
   gap: var(--spacing-s);
   font-size: var(--font-size-s);
+  line-height: 1.7;
+  font-family: monospace;
 
   &::before {
     content: "";
@@ -58,6 +67,24 @@ color-swatch {
     border-radius: var(--border-radius-s);
     /* --color is set in buildMarkdown.ts */
     background: var(--color);
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+spacing-bar {
+  display: grid;
+  grid-template-columns: calc(8em) 1fr;
+  align-items: center;
+  font-size: var(--font-size-s);
+  font-family: monospace;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    background: var(--color-fg-link);
+    height: 10px;
+    border-radius: var(--border-radius-s);
+    width: var(--width);
   }
 }
 
@@ -69,6 +96,16 @@ side-by-side {
   /* gap: 1rem; */
   margin: var(--spacing-l) 0;
 
+  &[direction="column"] {
+    display: flex;
+    flex-direction: column;
+
+    > pre {
+      border-bottom: 1px solid var(--color-border);
+      border-right: none;
+    }
+  }
+
   pre:has(code) {
     background-color: var(--color-bg-ground);
     padding: var(--spacing-m);
@@ -79,7 +116,7 @@ side-by-side {
     font-size: var(--font-size-s);
   }
 
-  >div {
+  > div {
     padding: var(--spacing-m);
   }
 }
