@@ -30,7 +30,7 @@ Small buttons:
   <button data-size="s">Smol</button>
   <button data-size="s" data-variant="outline">Smol2</button>
   <button data-size="s" data-variant="outline" disabled aria-busy="true">Smol</button>
-  <button data-size="s" data-variant="outline" data-tone="danger">smol danger</button>
+  <button data-size="s" data-variant="outline" data-tone="danger">Danger</button>
 </hstack-i>
 ```
 
