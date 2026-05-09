@@ -1,7 +1,7 @@
 /**
-# `<p class="eyebrow-i">`
+# Eyebrow
 
-Add supplemental information above your headings. Designed to help you use the correct `hgroup` & `p` tag semantics
+Add supplemental information above your headings. Designed to help you use the correct `hgroup` & `p` tag semantics, rather than introducing a new element
 
 ```html
 <hgroup>

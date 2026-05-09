@@ -12,7 +12,7 @@ Do you really need a giant Button.tsx file in your project that supports 50 prop
   <button data-variant="outline" data-tone="danger">Danger</button>
   <a href="#fake" data-as="button">Link Button</a>
   <button data-variant="text">Text button</button>
-  <button data-variant="texthover">Texthover button</button>
+  <button data-variant="ghost">Ghost button</button>
 </hstack-i>
 ```
 
@@ -93,7 +93,7 @@ Small buttons:
     }
 
     &[data-variant="text"],
-    &[data-variant="texthover"] {
+    &[data-variant="ghost"] {
       --color: var(--color-fg-link);
       color: var(--color);
       background-color: transparent;
@@ -108,7 +108,7 @@ Small buttons:
       }
     }
 
-    &[data-variant="texthover"]:hover {
+    &[data-variant="ghost"]:hover {
       background-color: var(--color-bg-highlight);
     }
 

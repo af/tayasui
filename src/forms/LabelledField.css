@@ -1,5 +1,5 @@
 /**
-# `<labelledfield-i>`
+# LabelledField
 
 An opinionated wrapper around a `<label>` and `<input>`/`<select>`/`<textarea>`.
 
@@ -54,7 +54,7 @@ labelledfield-i {
     display: flex;
   }
 
-  label>span:first-child {
+  label > span:first-child {
     position: absolute;
     top: 0px;
     pointer-events: none;

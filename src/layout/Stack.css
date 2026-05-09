@@ -1,7 +1,7 @@
 /**
-# `<hstack-i>` and `<vstack-i>`
+# Stacks
 
-Inspired by SwiftUI's HStack and VStack views, these components give you a simple way to create simple horizontal or vertical flex containers without adding any CSS.
+Inspired by SwiftUI's `HStack` and `VStack` views, these components give you a simple way to create simple horizontal or vertical flex containers without adding any CSS.
 
 ```html
 <hstack-i>

@@ -109,8 +109,10 @@
     }
   }
 
-  skeleton-i,
-  badge-i {
+  alert-i,
+  badge-i,
+  card-i,
+  skeleton-i {
     &[radius="none"] {
       border-radius: 0;
     }

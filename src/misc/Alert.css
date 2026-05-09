@@ -1,5 +1,5 @@
 /**
-# `<alert-i>`
+# Alert
 
 General purprose alert banner, supporting several `tone` variants.
 
@@ -7,39 +7,39 @@ Acts as a block container; use an hstack child if you need horizontally laid out
 
 ## Attributes
 
-* role (required) - "alert"
-* tone - "success" | "warn" | "danger"
-* pad - "xs" | "s" | "m" | "l" | "xl"
-* vpad - "xs" | "s" | "m" | "l" | "xl"
+* `role` (required) - "alert"
+* `tone` - "success" | "warn" | "danger" | "info" | "neutral"
+* `pad` - "xs" | "s" | "m" | "l" | "xl"
+* `vpad` - "xs" | "s" | "m" | "l" | "xl"
 
 ```html
 <alert-i role="alert">
   <h2>Did you know?</h2>
-  <p>This is a default/info alert</p>
+  This is a default/info alert
 </alert-i>
 ```
 ```html
 <alert-i role="alert" tone="success">
   <h2>Success</h2>
-  <p>This is a success alert</p>
+  This is a success alert
 </alert-i>
 ```
 ```html
 <alert-i role="alert" tone="warn">
   <h2>Warning</h2>
-  <p>This is a warning alert</p>
+  This is a warning alert
 </alert-i>
 ```
 ```html
 <alert-i role="alert" tone="danger">
   <h2>Danger</h2>
-  <p>This is a danger alert</p>
+  This is a danger alert
 </alert-i>
 ```
 ```html
 <alert-i role="alert" tone="neutral">
   <h2>Meh</h2>
-  <p>This is neutral</p>
+  This is neutral
 </alert-i>
 ```
 **/

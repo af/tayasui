@@ -18,8 +18,8 @@ nav {
     font-size: var(--font-size-xs);
     text-transform: uppercase;
     font-weight: bold;
-    margin-top: 1.5em;
     font-family: var(--font-family-micro, --font-family-text);
+    margin: 0.5em 0;
   }
 
   a {
@@ -36,6 +36,8 @@ nav {
 
 code {
   font-size-adjust: 0.5;
+  background-color: var(--color-bg-ground);
+  padding: 2px;
 }
 
 main {
@@ -90,7 +92,7 @@ spacing-bar {
 
 side-by-side {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, 4fr) minmax(0, 3fr);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-m);
   /* gap: 1rem; */
@@ -118,6 +120,10 @@ side-by-side {
 
   > div {
     padding: var(--spacing-m);
+  }
+
+  code {
+    background: none;
   }
 }
 
