@@ -42,6 +42,10 @@
     color: var(--color-fg-link-hover);
   }
 
+  p + p {
+    margin-top: 1em;
+  }
+
   input,
   textarea,
   select {
