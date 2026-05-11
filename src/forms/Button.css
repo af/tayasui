@@ -114,6 +114,10 @@ Small buttons:
 
     &[data-tone="danger"] {
       --color: var(--color-fg-danger);
+
+      &[data-variant="ghost"]:hover {
+        background-color: var(--color-bg-danger);
+      }
     }
 
     &[data-size="s"] {
