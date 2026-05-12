@@ -86,6 +86,7 @@ dropdown-i {
     }
 
     > button,
+    > [data-as="button"],
     > label {
       display: flex;
       min-width: 0;
