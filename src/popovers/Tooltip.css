@@ -1,5 +1,5 @@
 /**
-# `<tooltip-i>`
+# Tooltip
 
 ## ⚠ Experimental, limited browser support
 
@@ -16,7 +16,7 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
 
 ```html
 <p>
-  Also, with interestfor, <a href="#" interestfor="tooltip-link">links</a> can also trigger tooltips
+  With Interest Invokers, <a href="#" interestfor="tooltip-link">links</a> can also trigger tooltips
 </p>
 <tooltip-i role="tooltip" id="tooltip-link" popover="hint">
   This is the link's tooltip content
@@ -25,8 +25,7 @@ Hoverable tooltips. Uses [Interest Invokers](https://caniuse.com/wf-interest-inv
 
 ## TODO
 
-* multiple positions (above/below/left/right)
-* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-try
+* multiple positions (above/below/left/right) - with dynamic arrow
 
 ## References
 
@@ -41,6 +40,7 @@ tooltip-i {
 
   /* Note: uses common [popover] styles from facets.css */
   margin-top: calc(1.2 * var(--arrow-size));
+  justify-self: anchor-center;
 
   /* css generated content arrow */
   &::before {

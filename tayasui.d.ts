@@ -48,7 +48,9 @@ declare module 'react/jsx-runtime' {
       'switch-i': CustomElementProps
       'labelledfield-i': CustomElementProps
 
-      'dropdown-i': CustomElementProps
+      'dropdown-i': CustomElementProps<{
+        align?: 'left' | 'right'
+      }>
       'toggletip-i': CustomElementProps
       'tooltip-i': CustomElementProps
     }

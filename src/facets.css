@@ -1,13 +1,13 @@
 /* Common attributes and styles for various components */
 @layer taya-base {
   /* Common popover styles */
-  dropdown-i > :popover-open,
+  dropdown-i:popover-open,
   tooltip-i:popover-open,
   toggletip-i:popover-open {
     display: block;
-    position: absolute;
+    position: fixed;
     top: anchor(bottom);
-    justify-self: anchor-center;
+    bottom: auto;
 
     color: var(--color-fg-primary);
     border: none;

@@ -1,5 +1,5 @@
 /**
-# `<toggletip-i>`
+# Toggletip
 
 Note: This uses the "implicit anchor", so the tooltip will position itself relative to the element (button) that triggered it.
 
@@ -31,6 +31,7 @@ toggletip-i {
   --arrow-size: 6px;
 
   margin-top: calc(1.2 * var(--arrow-size));
+  justify-self: anchor-center;
 
   /* css arrow tooltip */
   &::before {
