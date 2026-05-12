@@ -22,8 +22,8 @@
     overflow: visible;
 
     transition:
-      opacity 0.2s,
-      transform 0.2s;
+      opacity 0.15s,
+      transform 0.15s;
 
     @starting-style {
       opacity: 0;

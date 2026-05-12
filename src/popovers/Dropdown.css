@@ -86,6 +86,7 @@ dropdown-i {
   left: anchor(left);
   position-try-fallbacks: flip-block;
   padding: var(--pad);
+  transform-origin: 0 0;
 
   &:popover-open {
     display: flex;
@@ -141,5 +142,6 @@ dropdown-i {
   &[align="right"] {
     left: unset;
     right: anchor(right);
+    transform-origin: 100% 0;
   }
 }
