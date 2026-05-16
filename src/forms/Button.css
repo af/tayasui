@@ -13,6 +13,7 @@ Do you really need a giant Button.tsx file in your project that supports 50 prop
   <a href="#fake" data-as="button">Link Button</a>
   <button data-variant="text">Text button</button>
   <button data-variant="ghost">Ghost button</button>
+  <button data-size="l">Large button</button>
 </hstack-i>
 ```
 
@@ -26,7 +27,7 @@ Loading and disabled states, using standard attributes:
 
 Small buttons:
 ```html
-<hstack-i gap="s" vpad="s">
+<hstack-i gap="s" vpad="s" wrap="wrap">
   <button data-size="s">Smol</button>
   <button data-size="s" data-variant="outline">Smol2</button>
   <button data-size="s" data-variant="outline" disabled aria-busy="true">Smol</button>
@@ -123,6 +124,11 @@ Small buttons:
     &[data-size="s"] {
       font-size: var(--font-size-xs);
       padding: 0 var(--spacing-m);
+    }
+
+    &[data-size="l"] {
+      font-size: var(--font-size-m);
+      padding: var(--spacing-s) var(--spacing-xl);
     }
 
     &:disabled,
